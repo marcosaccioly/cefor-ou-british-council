@@ -1,0 +1,20 @@
+# Segredos — nunca versionar (D8 da spec)
+.env
+.env.*
+*.key
+*.pem
+secrets/
+
+# Obsidian — fora do versionamento (D8 da spec)
+.obsidian/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporários
+*.tmp
+*.bak
+*~
+.cache/
