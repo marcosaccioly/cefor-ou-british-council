@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TNE Exploratory Grant 2026 · Briefing CEFOR/IFES e Open University · v4</title>
+<style>
+  :root{
+    --navy:#0F3A6B; --navy-deep:#0a2748; --teal:#0E8C7E; --teal-soft:#2DD4C7;
+    --ink:#172430; --slate:#566472; --slate-l:#8693a0;
+    --paper:#f6f6f2; --card:#ffffff; --rule:#e0e3e0; --rule-d:#c9cec9;
+    --amber-bg:#fbf4e6; --amber-ru:#e9d3a3; --amber-tx:#8a6312; --tealbg:#e9faf7;
+    --red-bg:#fbe8e3; --red-ru:#e7b9ac; --red-tx:#a3341f;
+    --serif:Georgia,"Iowan Old Style","Palatino Linotype","Book Antiqua","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--paper);color:var(--ink);line-height:1.55;
+    padding:0 0 70px;-webkit-font-smoothing:antialiased;font-size:15px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px}
+  h1,h2,h3,h4,.serif{font-family:var(--serif)}
+
+  .mast{border-top:5px solid var(--navy);background:var(--card);border-bottom:1px solid var(--rule)}
+  .mast .wrap{padding-top:30px;padding-bottom:26px}
+  .kicker{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+  .mast h1{font-size:clamp(27px,5.6vw,40px);color:var(--navy);line-height:1.12;margin:13px 0 0;letter-spacing:-.01em;font-weight:700}
+  .standfirst{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--slate);margin-top:11px;line-height:1.45}
+  .mastmeta{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:20px;padding-top:16px;border-top:1px solid var(--rule);font-size:12.5px;color:var(--slate)}
+  .mastmeta b{color:var(--ink);font-weight:650}
+  .srclink{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-size:13px;color:var(--navy);text-decoration:none;border:1px solid var(--rule-d);border-radius:4px;padding:9px 13px;background:#fafaf7;font-weight:600}
+  .srclink:hover{border-color:var(--navy);background:#fff}
+  .srclink .lbl{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--slate-l);font-weight:700}
+  .srclink .u{color:var(--navy);word-break:break-all;font-weight:600}
+  .vtag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--teal);color:#fff;padding:3px 9px;border-radius:3px;margin-left:10px;vertical-align:middle}
+
+  /* TOC */
+  .toc{background:var(--card);border:1px solid var(--rule);border-radius:6px;padding:18px 20px;margin-top:26px}
+  .toc h2{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--slate-l);font-weight:700;margin-bottom:13px}
+  .toc ol{list-style:none}
+  .toc .cols{columns:2;column-gap:30px}
+  .toc li{break-inside:avoid;margin-bottom:2px}
+  .toc a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--ink);font-size:13px;line-height:1.4;padding:4px 0;border-bottom:1px solid transparent}
+  .toc a:hover{color:var(--teal)}
+  .toc a .tn{font-family:var(--serif);font-size:12px;color:var(--teal);font-weight:700;flex:none;width:26px}
+  .toc a:hover .tn{color:var(--navy)}
+  .toc a.feat{color:var(--navy);font-weight:700}
+
+  section{padding-top:34px;scroll-margin-top:14px}
+  .shead{display:flex;align-items:baseline;gap:13px;border-bottom:2px solid var(--navy);padding-bottom:9px;margin-bottom:18px}
+  .snum{font-family:var(--serif);font-size:15px;color:var(--teal);font-weight:700;flex:none}
+  .shead h2{font-size:22px;color:var(--navy);font-weight:700;letter-spacing:-.01em;line-height:1.15}
+  .toplink{margin-left:auto;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--slate-l);text-decoration:none;font-weight:700;font-family:var(--sans);align-self:center}
+  .toplink:hover{color:var(--teal)}
+
+  p.lede{font-size:15.5px;color:var(--ink);line-height:1.6}
+  p.lede b{color:var(--navy)}
+  p.note{font-size:13.5px;color:var(--slate);margin-top:11px;line-height:1.55}
+  p.note b{color:var(--ink)}
+
+  .def{border-left:3px solid var(--teal);padding:4px 0 4px 18px;margin:4px 0 16px}
+  .def .meaning{font-size:12.5px;color:var(--teal);font-weight:700;letter-spacing:.02em;margin-bottom:8px}
+  .def .meaning span{color:var(--slate-l);font-weight:600}
+  .def .t{font-family:var(--serif);font-size:19px;color:var(--navy);font-weight:700;line-height:1.4}
+  .def .t b{color:var(--teal);font-style:italic}
+
+  .ex{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .exc{padding:16px 16px 16px 0;border-right:1px solid var(--rule)}
+  .exc:last-child{border-right:none;padding-right:0}
+  .exc .k{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);font-weight:700}
+  .exc h4{font-size:16px;color:var(--navy);margin:7px 0 5px;font-weight:700}
+  .exc p{font-size:12.5px;color:var(--slate);line-height:1.5}
+
+  .facts{display:flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:5px;overflow:hidden;background:var(--card)}
+  .fact{flex:1 1 0;min-width:140px;padding:16px 18px;border-right:1px solid var(--rule)}
+  .fact:last-child{border-right:none}
+  .fact .n{font-family:var(--serif);font-size:25px;color:var(--navy);font-weight:700;line-height:1}
+  .fact .n .br{display:block;font-size:12.5px;color:var(--teal);margin-top:4px;font-weight:700}
+  .fact .l{font-size:11.5px;color:var(--slate);margin-top:7px;line-height:1.35}
+
+  .bens{border-top:1px solid var(--rule)}
+  .ben{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid var(--rule)}
+  .ben .idx{font-family:var(--serif);font-size:15px;color:var(--teal);font-weight:700;flex:none;width:22px;padding-top:1px}
+  .ben h4{font-size:16px;color:var(--navy);font-weight:700;margin-bottom:3px}
+  .ben p{font-size:13px;color:var(--slate);line-height:1.5}
+
+  /* TIMELINE */
+  .tl{border-top:1px solid var(--rule)}
+  .tlrow{display:grid;grid-template-columns:135px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--rule)}
+  .tlrow .when{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--teal);padding-top:2px}
+  .tlrow.hot .when{color:var(--amber-tx)}
+  .tlrow.done .when{color:var(--slate-l)}
+  .tlrow .what{font-family:var(--serif);font-size:15.5px;color:var(--navy);font-weight:700}
+  .tlrow .det{font-size:12.5px;color:var(--slate);margin-top:3px;line-height:1.5}
+  .tlrow.hot{background:var(--amber-bg);margin:0 -14px;padding-left:14px;padding-right:14px;border-radius:4px;border-bottom-color:var(--amber-ru)}
+  .tlrow.hot .what{color:var(--amber-tx)}
+  .tlrow.dead{background:var(--red-bg);margin:0 -14px;padding-left:14px;padding-right:14px;border-radius:4px;border-bottom-color:var(--red-ru)}
+  .tlrow.dead .when,.tlrow.dead .what{color:var(--red-tx)}
+
+  /* EFFORT DETAIL */
+  .effbox{border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-bottom:14px}
+  .effbox .ehead{padding:14px 18px;border-bottom:1px solid var(--rule)}
+  .effbox.crunch .ehead{background:var(--amber-bg);border-bottom-color:var(--amber-ru)}
+  .effbox .ehead h3{font-size:17px;color:var(--navy);font-weight:700}
+  .effbox.crunch .ehead h3{color:var(--amber-tx)}
+  .effbox .ehead .sub{font-size:12.5px;color:var(--slate);margin-top:3px}
+  .effbox .ebody{padding:6px 18px 12px}
+  .erow{padding:11px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1fr;gap:3px}
+  .erow:last-child{border-bottom:none}
+  .erow .et{font-size:13.5px;font-weight:700;color:var(--ink)}
+  .erow .et .ph{font-family:var(--serif);color:var(--teal);margin-right:7px}
+  .erow .ed{font-size:12.5px;color:var(--slate);line-height:1.5}
+  .who{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;background:#eef1f4;color:var(--navy);padding:2px 6px;border-radius:3px;margin-left:4px}
+  .who.ou{background:var(--tealbg);color:var(--teal)}
+  .load{margin-top:8px;font-size:12px;color:var(--slate);background:#f3f5f7;border-radius:4px;padding:9px 12px}
+  .load b{color:var(--navy)}
+
+  .teams{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .team h3{font-size:14px;color:var(--navy);font-weight:700;padding-bottom:8px;border-bottom:2px solid var(--teal-soft);margin-bottom:4px}
+  .team.br h3{border-bottom-color:var(--navy)}
+  .member{padding:11px 0;border-bottom:1px solid var(--rule)}
+  .member:last-child{border-bottom:none}
+  .member .nm{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink)}
+  .member .tags{margin-top:4px;display:flex;flex-wrap:wrap;gap:5px}
+  .tg{font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 6px;border-radius:3px;background:#eef1f4;color:var(--navy)}
+  .tg.lead{background:var(--navy);color:#fff}
+  .tg.star{background:#dff4f0;color:var(--teal)}
+  .member .rl{font-size:12px;color:var(--slate);margin-top:5px;line-height:1.45}
+  .member .as{font-size:11.5px;color:var(--teal);margin-top:5px;line-height:1.45;font-weight:600}
+
+  .ranknote{border-left:3px solid var(--navy);background:#eef2f6;padding:14px 16px;font-size:13px;color:var(--slate);line-height:1.55;border-radius:0 4px 4px 0;margin-bottom:16px}
+  .ranknote b{color:var(--navy)}
+  .ranknote .mini{margin-top:9px;font-size:12px;display:flex;flex-wrap:wrap;gap:5px}
+  .ranknote .wp{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:3px 8px;font-weight:700;color:var(--navy)}
+  .ranknote .wp b{color:var(--teal)}
+
+  .path{background:var(--card);border:1px solid var(--rule);border-radius:6px;margin-bottom:16px;overflow:hidden}
+  .path.win{border:1px solid var(--teal)}
+  .phead{display:flex;align-items:flex-start;gap:15px;padding:18px 20px;border-bottom:1px solid var(--rule);position:relative}
+  .path.win .phead{background:#f3fbf9}
+  .pn{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--navy);line-height:.9;flex:none;width:34px}
+  .path.win .pn{color:var(--teal)}
+  .pt{flex:1;min-width:0}
+  .pt h3{font-size:18px;color:var(--navy);font-weight:700;line-height:1.25}
+  .reco{font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;background:var(--teal);padding:3px 8px;border-radius:3px;white-space:nowrap;align-self:flex-start;margin-top:5px}
+  .concept{font-size:13px;color:var(--slate);margin-top:6px;line-height:1.5}
+
+  .indexbar{padding:14px 20px;border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:16px}
+  .indexbar .lab{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--slate-l);font-weight:700;flex:none;width:120px}
+  .indexbar .track{flex:1;height:8px;background:#edf0f2;border-radius:999px;overflow:hidden}
+  .indexbar .fill{height:100%;background:var(--navy);border-radius:999px}
+  .path.win .indexbar .fill{background:var(--teal)}
+  .indexbar .val{flex:none;font-family:var(--serif);font-size:18px;font-weight:700;color:var(--navy);width:54px;text-align:right}
+  .path.win .indexbar .val{color:var(--teal)}
+
+  table.score{width:100%;border-collapse:collapse;margin:0}
+  table.score caption{caption-side:top;text-align:left;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-l);font-weight:700;padding:14px 20px 6px}
+  table.score th,table.score td{padding:7px 20px;font-size:12px;text-align:right;border-bottom:1px solid var(--rule)}
+  table.score th{font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--slate-l);font-weight:700}
+  table.score th:first-child,table.score td:first-child{text-align:left}
+  table.score td:first-child{color:var(--slate)}
+  table.score td.v{color:var(--ink);font-variant-numeric:tabular-nums}
+  table.score tr.tot td{font-weight:700;color:var(--navy);border-bottom:none;border-top:2px solid var(--navy);padding-top:9px;padding-bottom:11px}
+  table.score tr.tot td:first-child{color:var(--navy)}
+
+  /* CRITERIA TABLE (real) */
+  table.crit{width:100%;border-collapse:collapse;border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--card)}
+  table.crit th,table.crit td{padding:11px 14px;font-size:12.5px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+  table.crit thead th{background:var(--navy);color:#fff;font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
+  table.crit td.w{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--teal);text-align:center;white-space:nowrap;width:64px}
+  table.crit td.cname{font-weight:700;color:var(--navy);width:185px}
+  table.crit td p{font-size:12px;color:var(--slate);line-height:1.5}
+  table.crit tr:last-child td{border-bottom:none}
+
+  .pbody{padding:16px 20px}
+  .block{margin-bottom:15px}
+  .block:last-child{margin-bottom:0}
+  .block .h{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:8px}
+  ul.cl{list-style:none}
+  ul.cl li{font-size:13px;color:var(--ink);padding:4px 0 4px 18px;position:relative;line-height:1.5}
+  ul.cl.deliv li::before{content:"";position:absolute;left:2px;top:11px;width:5px;height:5px;background:var(--navy);transform:rotate(45deg)}
+  ul.cl.pro li::before{content:"+";position:absolute;left:1px;top:3px;color:var(--teal);font-weight:700}
+  ul.cl.con li::before{content:"\2212";position:absolute;left:1px;top:3px;color:var(--amber-tx);font-weight:700}
+  ul.cl.sr li::before{content:"\203A";position:absolute;left:3px;top:2px;color:var(--navy);font-weight:700;font-size:15px}
+  .block.sr{background:#f5f7f9;border-left:3px solid var(--navy);border-radius:0 4px 4px 0;padding:13px 15px}
+  .twocol{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+  /* CORRECTION / BLIND-SPOT */
+  .correct{background:var(--tealbg);border:1px solid #bfe3da;border-left:3px solid var(--teal);border-radius:0 6px 6px 0;padding:13px 16px;margin-bottom:12px}
+  .correct h4{font-size:12px;color:var(--teal);font-weight:700;margin-bottom:4px;letter-spacing:.02em;text-transform:uppercase}
+  .correct p{font-size:12.5px;color:var(--slate);line-height:1.55}
+  .correct p b{color:var(--ink)}
+
+  .bgrid{display:grid;gap:11px}
+  .bcard{border:1px solid var(--rule);border-left:3px solid var(--amber-tx);border-radius:0 6px 6px 0;padding:13px 16px;background:var(--card)}
+  .bcard.crit{border-left-color:var(--red-tx)}
+  .bcard .bt{font-family:var(--serif);font-size:15px;color:var(--navy);font-weight:700;margin-bottom:5px;display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
+  .sev{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border-radius:3px;flex:none}
+  .sev.c{background:var(--red-bg);color:var(--red-tx)}
+  .sev.a{background:var(--amber-bg);color:var(--amber-tx)}
+  .sev.m{background:#eef1f4;color:var(--slate)}
+  .bcard p{font-size:12.5px;color:var(--slate);line-height:1.55}
+  .bcard p b{color:var(--ink)}
+  .bcard .act{margin-top:6px;font-size:12px;color:var(--navy);line-height:1.5}
+  .bcard .act b{color:var(--teal)}
+
+  .verdict{background:var(--navy);color:#fff;border-radius:6px;padding:24px;margin-top:8px}
+  .verdict h2{font-size:20px;font-weight:700;margin-bottom:9px;color:#fff}
+  .verdict p{font-size:14px;color:#cdd9e8;line-height:1.6}
+  .verdict p b{color:#fff}
+  .verdict .pieces{margin-top:15px;border-top:1px solid rgba(255,255,255,.16);padding-top:14px;display:grid;gap:8px}
+  .verdict .pc{font-size:13px;color:#dde6f0}
+  .verdict .pc b{font-family:var(--serif);color:var(--teal-soft)}
+
+  .alert{background:var(--amber-bg);border:1px solid var(--amber-ru);border-radius:6px;padding:17px 19px;margin-top:14px}
+  .alert h3{font-size:15px;color:var(--amber-tx);font-weight:700;margin-bottom:6px}
+  .alert p{font-size:13px;color:#7a5a1a;line-height:1.6}
+  .alert .caps{margin-top:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+  .alert .cap{background:#fff;border:1px solid var(--amber-ru);border-radius:4px;padding:9px 11px}
+  .alert .cap .cn{font-family:var(--serif);font-size:15px;color:var(--amber-tx);font-weight:700}
+  .alert .cap .cl{font-size:10.5px;color:#7a5a1a;margin-top:2px;line-height:1.3}
+
+  .fine{margin-top:14px;border:1px solid var(--rule);border-radius:6px;padding:16px 18px;background:var(--card)}
+  .fine h3{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate-l);font-weight:700;margin-bottom:9px}
+  .fine ul{list-style:none}
+  .fine li{font-size:12.5px;color:var(--slate);padding:5px 0 5px 16px;position:relative;line-height:1.5;border-top:1px solid var(--rule)}
+  .fine li:first-child{border-top:none}
+  .fine li::before{content:"\2022";position:absolute;left:2px;top:5px;color:var(--navy);font-weight:700}
+  .fine li b{color:var(--ink)}
+
+  .next{margin-top:14px;border:1px solid var(--rule);border-left:3px solid var(--teal);border-radius:0 6px 6px 0;padding:17px 19px;background:var(--card)}
+  .next h3{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);font-weight:700;margin-bottom:10px}
+  ol.steps{list-style:none;counter-reset:s}
+  ol.steps li{counter-increment:s;position:relative;padding:8px 0 8px 34px;font-size:13.5px;color:var(--ink);line-height:1.5;border-top:1px solid var(--rule)}
+  ol.steps li:first-child{border-top:none}
+  ol.steps li::before{content:counter(s);position:absolute;left:0;top:8px;width:22px;height:22px;background:var(--teal);color:#fff;border-radius:50%;font-family:var(--serif);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center}
+  ol.steps li b{color:var(--navy)}
+
+  .qbox{margin-top:12px;background:#f5f7f9;border-radius:6px;padding:14px 16px}
+  .qbox .qh{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:8px}
+  .qbox ul{list-style:none}
+  .qbox li{font-size:12.5px;color:var(--ink);padding:5px 0 5px 20px;position:relative;line-height:1.5}
+  .qbox li::before{content:"?";position:absolute;left:2px;top:4px;color:var(--teal);font-weight:700;font-family:var(--serif)}
+
+  .foot{margin-top:30px;padding-top:16px;border-top:1px solid var(--rule);font-size:11px;color:var(--slate-l);line-height:1.6}
+
+  @media (max-width:560px){
+    .ex{grid-template-columns:1fr}
+    .exc{border-right:none;border-bottom:1px solid var(--rule);padding-right:0}
+    .exc:last-child{border-bottom:none}
+    .teams,.twocol{grid-template-columns:1fr}
+    .tlrow{grid-template-columns:1fr;gap:4px}
+    .indexbar{flex-wrap:wrap}
+    .indexbar .lab{width:100%}
+    .alert .caps{grid-template-columns:1fr}
+    .toc .cols{columns:1}
+    table.score th,table.score td{padding-left:16px;padding-right:16px}
+    table.crit td.cname{width:auto}
+  }
+</style>
+</head>
+<body>
+
+  <div class="mast">
+    <div class="wrap">
+      <div class="kicker">Briefing interno &middot; financiamento internacional <span class="vtag">v4 &middot; revisado</span></div>
+      <h1>TNE Exploratory Grant 2026</h1>
+      <div class="standfirst">Uma chance de o CEFOR/IFES firmar uma parceria oficial de educa&ccedil;&atilde;o com a Open University do Reino Unido, financiada pelo British Council. Esta vers&atilde;o incorpora os crit&eacute;rios reais do edital, os perfis verificados da equipe e os pontos cegos que precisamos endere&ccedil;ar.</div>
+      <div class="mastmeta">
+        <span><b>Parceiro</b> Institute of Educational Technology, Open University</span>
+        <span><b>Submiss&atilde;o</b> 6 de julho de 2026, 11h59 BST</span>
+        <span><b>Atualizado</b> 11 de junho de 2026</span>
+      </div>
+      <a class="srclink" href="https://opportunities-insight.britishcouncil.org/short-articles/opportunities/tne-exploratory-grants-2026" target="_blank" rel="noopener">
+        <span class="lbl">Edital oficial</span>
+        <span class="u">opportunities-insight.britishcouncil.org/short-articles/opportunities/tne-exploratory-grants-2026</span>
+      </a>
+
+      <!-- ÍNDICE CLICÁVEL -->
+      <nav class="toc" aria-label="&Iacute;ndice">
+        <h2>&Iacute;ndice</h2>
+        <ol class="cols">
+          <li><a href="#mudancas"><span class="tn">0</span>O que mudou nesta vers&atilde;o</a></li>
+          <li><a href="#tne"><span class="tn">I</span>O que &eacute; TNE</a></li>
+          <li><a href="#edital"><span class="tn">II</span>O que &eacute; este edital</a></li>
+          <li><a href="#vale"><span class="tn">III</span>Por que vale muito a pena</a></li>
+          <li><a href="#cronograma"><span class="tn">IV</span>O cronograma</a></li>
+          <li><a href="#criterios"><span class="tn">V</span>Como a proposta &eacute; avaliada</a></li>
+          <li><a href="#esforco"><span class="tn">VI</span>O esfor&ccedil;o, em duas fases</a></li>
+          <li><a href="#time"><span class="tn">VII</span>O time, ponta a ponta</a></li>
+          <li><a class="feat" href="#caminhos"><span class="tn">VIII</span>Os caminhos &mdash; com as notas</a></li>
+          <li><a class="feat" href="#pontos-cegos"><span class="tn">IX</span>O que n&atilde;o est&aacute;vamos vendo</a></li>
+          <li><a href="#regulatorio"><span class="tn">X</span>O n&uacute;cleo regulat&oacute;rio brasileiro</a></li>
+          <li><a href="#mecanismos"><span class="tn">XI</span>Os mecanismos da OU</a></li>
+          <li><a href="#precedentes"><span class="tn">XII</span>Quem j&aacute; ganhou</a></li>
+          <li><a class="feat" href="#veredito"><span class="tn">&#9733;</span>Veredito e pr&oacute;ximos passos</a></li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+  <!-- 0 — O QUE MUDOU NESTA VERSÃO -->
+  <section id="mudancas">
+    <div class="shead"><span class="snum">0</span><h2>O que mudou nesta vers&atilde;o</h2></div>
+    <p class="note" style="margin-top:0">Esta v4 corrige e amplia o briefing anterior depois da leitura linha a linha do <b>Call Guidance v2</b> oficial e de uma pesquisa de verifica&ccedil;&atilde;o sobre a equipe, a OU e o ambiente regulat&oacute;rio brasileiro. Em resumo:</p>
+    <div class="correct"><h4>Perfis verificados</h4><p>O <b>Felipe Tessarolo</b> &eacute; corretamente posicionado como quadro da <b>OU/IET</b> &mdash; learning design, acessibilidade e a <b>ponte que aproximou a Vanessa</b> &mdash;, n&atilde;o como insider do IFES. A <b>Vanessa</b> ganha os ativos que faltavam (m&eacute;todo ADDIEM, pr&ecirc;mio CBIE 2024, CONIF). A <b>Leigh-Anne</b> aparece com as microcredenciais que <b>j&aacute; possui</b> e que servem de &acirc;ncora da proposta.</p></div>
+    <div class="correct"><h4>Crit&eacute;rios reais, n&atilde;o estimados</h4><p>A se&ccedil;&atilde;o de avalia&ccedil;&atilde;o agora reproduz os <b>quatro crit&eacute;rios oficiais</b> do Guidance (Quality &amp; Relevance 35%, Methodology &amp; Design 30%, Sustainability 25%, Resources 10%) com o que cada um realmente exige.</p></div>
+    <div class="correct"><h4>Tr&ecirc;s regras duras do edital</h4><p>O edital diz, em letras claras, que <b>n&atilde;o financia estudos de pesquisa</b>; que <b>custos de PI/patente/licenciamento s&atilde;o inelegíveis</b>; e que, para o Brasil, <b>institui&ccedil;&otilde;es TVET/FE n&atilde;o podem ser Lead</b> &mdash; o que exige posicionar o IFES explicitamente como provedor de <b>ensino superior</b>. Isso reposiciona a proposta e os Caminhos 3 e 4.</p></div>
+    <div class="correct"><h4>O que n&atilde;o est&aacute;vamos vendo</h4><p>Nova se&ccedil;&atilde;o de <b>pontos cegos</b> (se&ccedil;&atilde;o IX): o slot reservado &agrave;s na&ccedil;&otilde;es devolvidas, a compet&iacute;&ccedil;&atilde;o real pelo Brasil, o nicho que os gigantes n&atilde;o ocupam, o v&aacute;cuo regulat&oacute;rio brasileiro como produto premiado e o mecanismo <b>OUVP</b> da pr&oacute;pria OU.</p></div>
+  </section>
+
+  <!-- 1 -->
+  <section id="tne">
+    <div class="shead"><span class="snum">I</span><h2>O que &eacute; TNE</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <div class="def">
+      <div class="meaning">TNE = Transnational Education <span>(em portugu&ecirc;s: Educa&ccedil;&atilde;o Transnacional)</span></div>
+      <div class="t">&Eacute; quando algu&eacute;m estuda e recebe uma <b>qualifica&ccedil;&atilde;o de uma institui&ccedil;&atilde;o estrangeira sem sair do pr&oacute;prio pa&iacute;s</b>. A universidade est&aacute; l&aacute; fora, o estudante est&aacute; aqui. O que cruza a fronteira &eacute; o diploma, o certificado ou a microcredencial, n&atilde;o o aluno.</div>
+    </div>
+    <div class="ex">
+      <div class="exc"><div class="k">Modelo</div><h4>Diploma conjunto</h4><p>Duas institui&ccedil;&otilde;es co-desenham um curso e reconhecem juntas o mesmo diploma, em formato duplo, conjunto ou dual.</p></div>
+      <div class="exc"><div class="k">Modelo</div><h4>Microcredencial</h4><p>Um certificado curto e empilh&aacute;vel, reconhecido pelos dois lados. O British Council conta isso explicitamente como TNE.</p></div>
+      <div class="exc"><div class="k">Modelo</div><h4>EaD reconhecida</h4><p>Ensino online ou h&iacute;brido ofertado de forma coordenada entre os pa&iacute;ses (distance learning), com reconhecimento m&uacute;tuo.</p></div>
+    </div>
+    <p class="note"><b>Por que isso casa com o CEFOR.</b> Educa&ccedil;&atilde;o a dist&acirc;ncia, MOOC, microcredencial e tecnologias educacionais s&atilde;o a mat&eacute;ria-prima da TNE moderna. O CEFOR j&aacute; faz tudo isso dentro do Brasil. A TNE &eacute; dar a isso uma ponte internacional. O Guidance lista a microcredencial entre os tipos formais de TNE: <i>&ldquo;micro-credentials or certificates of learning outcomes from short-term learning experiences&rdquo;</i>.</p>
+  </section>
+
+  <!-- 2 -->
+  <section id="edital">
+    <div class="shead"><span class="snum">II</span><h2>O que &eacute; este edital</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <p class="lede">O <b>Going Global Partnerships</b> &eacute; o programa de parcerias do <b>British Council</b>. Dentro dele, os <b>TNE Exploratory Grants</b> financiam a fase inicial de parcerias entre institui&ccedil;&otilde;es do Reino Unido e de 15 pa&iacute;ses, incluindo o Brasil. A palavra &ldquo;exploratory&rdquo; &eacute; a chave: o recurso &eacute; para <b>estruturar e desenhar a parceria</b>, n&atilde;o para rodar um curso inteiro nem para fazer pesquisa. &Eacute; a semente de algo maior.</p>
+    <div class="facts" style="margin-top:16px">
+      <div class="fact"><div class="n">&pound;25k<span class="br">~ R$ 172 mil</span></div><div class="l">por projeto, no m&aacute;ximo</div></div>
+      <div class="fact"><div class="n">31<span class="br">+3 na&ccedil;&otilde;es devolvidas</span></div><div class="l">projetos previstos no total</div></div>
+      <div class="fact"><div class="n">2</div><div class="l">grants m&iacute;nimos para o Brasil (pool geral)</div></div>
+      <div class="fact"><div class="n">17</div><div class="l">meses de execu&ccedil;&atilde;o, a partir de jan/2027</div></div>
+    </div>
+    <p class="note"><b>A regra que define tudo.</b> Quem submete a candidatura &eacute; sempre a institui&ccedil;&atilde;o l&iacute;der do Reino Unido (UK Lead com degree-awarding powers), no nosso caso a <b>Open University</b>. Ela inicia e envia na plataforma, recebe o recurso, repassa ao CEFOR/IFES como parceiro e responde pelo contrato. <b>Se o lado brasileiro iniciar a candidatura, ela &eacute; automaticamente inelegível.</b></p>
+    <p class="note"><b>Os tr&ecirc;s objetivos do edital.</b> (1) mudan&ccedil;a institucional sustent&aacute;vel rumo a acesso mais inclusivo a educa&ccedil;&atilde;o de qualidade via TNE; (2) melhor entendimento do contexto local e de um ambiente <b>regulat&oacute;rio e operacional</b> favor&aacute;vel &agrave; parceria; (3) mudan&ccedil;as positivas nos sistemas educacionais locais, com contribui&ccedil;&atilde;o aos ODS. A proposta deve mirar uma ou mais das <b>quatro Actions</b> da TNE Strategy do British Council (lan&ccedil;ada em out/2025): <b>(1)</b> dados e insights sobre TNE; <b>(2)</b> reputa&ccedil;&atilde;o de qualidade do TNE brit&acirc;nico; <b>(3)</b> informar pol&iacute;tica e o <b>reconhecimento de qualifica&ccedil;&otilde;es do Reino Unido</b>; <b>(4)</b> mostrar o poder transformador do TNE e sua contribui&ccedil;&atilde;o aos ODS.</p>
+    <p class="note"><b>E em qual n&iacute;vel impactar.</b> O projeto deve entregar impacto em pelo menos um de tr&ecirc;s n&iacute;veis: <b>institucional</b> (desenvolvimento de parceria, escopo de curr&iacute;culo, alinhamento inicial de QA), <b>do estudante</b> (desenho inclusivo, trilhas de benef&iacute;cio ao aprendiz) ou <b>do sistema</b> (compartilhamento de insight, identifica&ccedil;&atilde;o de barreiras, an&aacute;lise preparat&oacute;ria de pol&iacute;tica/contexto).</p>
+  </section>
+
+  <!-- 3 -->
+  <section id="vale">
+    <div class="shead"><span class="snum">III</span><h2>Por que vale muito a pena</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <div class="bens">
+      <div class="ben"><div class="idx">1</div><div><h4>O parceiro &eacute; o ideal</h4><p>A Open University &eacute; a maior refer&ecirc;ncia mundial em educa&ccedil;&atilde;o a dist&acirc;ncia, e o IET &eacute; o bra&ccedil;o de pesquisa e desenvolvimento dela. CEFOR &eacute; refer&ecirc;ncia nacional em EaD e MOOC. O encaixe &eacute; quase perfeito, e foi o Felipe, de dentro do IET, que fez a ponte com a Vanessa.</p></div></div>
+      <div class="ben"><div class="idx">2</div><div><h4>Baixo risco, alto retorno</h4><p>&Eacute; uma fase explorat&oacute;ria, de esfor&ccedil;o enxuto, mas abre uma parceria internacional oficial com selo British Council e Open University. Poucas portas valem tanto por t&atilde;o pouco.</p></div></div>
+      <div class="ben"><div class="idx">3</div><div><h4>Porta para coisas maiores</h4><p>O pr&oacute;prio edital pontua o <b>post-grant pathway</b> (de explorat&oacute;rio para opera&ccedil;&atilde;o). Estabelecida a parceria, ela habilita editais maiores, programas conjuntos e coopera&ccedil;&atilde;o cont&iacute;nua.</p></div></div>
+      <div class="ben"><div class="idx">4</div><div><h4>Internacionaliza o CEFOR</h4><p>Coloca o CEFOR/IFES no mapa internacional e o diferencia dentro da Rede Federal, com potencial de replica&ccedil;&atilde;o para os 38 Institutos via CONIF.</p></div></div>
+      <div class="ben"><div class="idx">5</div><div><h4>Chega no tempo certo</h4><p>Coincide com os <b>20 anos do CEFOR</b> e o <b>VIII CONCEFOR</b> (17&ndash;20/ago/2026, tema &ldquo;20 anos construindo novos cen&aacute;rios&rdquo;). Uma parceria internacional &eacute; um marco &agrave; altura.</p></div></div>
+      <div class="ben"><div class="idx">6</div><div><h4>Faz o time crescer</h4><p>Coloca a equipe lado a lado com o IET em microcredenciais, learning design, acessibilidade e IA respons&aacute;vel. Aprendizado que fica.</p></div></div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section id="cronograma">
+    <div class="shead"><span class="snum">IV</span><h2>O cronograma</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <p class="note" style="margin-top:0;margin-bottom:14px">Datas conforme o <b>Call Guidance v2</b> e o Grant Agreement. <b>Aten&ccedil;&atilde;o:</b> a janela de perguntas de esclarecimento (8/jun) j&aacute; passou &mdash; ainda vale e-mailar, mas sem garantia de resposta oficial.</p>
+    <div class="tl">
+      <div class="tlrow done"><div class="when">8 mai 2026</div><div><div class="what">Abertura do edital</div><div class="det">Call aberto. Guidance v2 publicado (atualiza&ccedil;&atilde;o sobre Ar&aacute;bia Saudita).</div></div></div>
+      <div class="tlrow dead"><div class="when">8 jun 2026 &middot; encerrado</div><div><div class="what">Prazo de perguntas de esclarecimento</div><div class="det">J&aacute; fechado. As confirma&ccedil;&otilde;es cr&iacute;ticas (slot devolvido, OUVP, classifica&ccedil;&atilde;o do IFES) dependiam deste canal. Tentar mesmo assim por e-mail.</div></div></div>
+      <div class="tlrow hot"><div class="when">Agora &middot; at&eacute; 6 jul</div><div><div class="what">Montar e fechar a candidatura</div><div class="det">~25 dias de esfor&ccedil;o concentrado. A OU prepara e submete na plataforma Good Grants.</div></div></div>
+      <div class="tlrow"><div class="when">6 jul 2026</div><div><div class="what">Submiss&atilde;o pela Open University</div><div class="det">Prazo final, 11h59 BST, sem prorroga&ccedil;&atilde;o. Recomenda-se enviar 1h antes.</div></div></div>
+      <div class="tlrow"><div class="when">fim nov 2026</div><div><div class="what">Anúncio dos resultados</div><div class="det">Avalia&ccedil;&atilde;o por painel de especialistas. Sem trabalho da nossa parte.</div></div></div>
+      <div class="tlrow"><div class="when">~dez 2026</div><div><div class="what">Assinatura do contrato e pagamento</div><div class="det">Contrato ~2 semanas ap&oacute;s o resultado; pagamento em at&eacute; 30 dias da assinatura.</div></div></div>
+      <div class="tlrow"><div class="when">1 jan 2027</div><div><div class="what">In&iacute;cio formal do projeto</div><div class="det">Come&ccedil;o do co-desenho com o IET.</div></div></div>
+      <div class="tlrow"><div class="when">31 ago 2027</div><div><div class="what">Relat&oacute;rio de progresso</div><div class="det">Presta&ccedil;&atilde;o de contas parcial, obrigat&oacute;ria.</div></div></div>
+      <div class="tlrow"><div class="when">31 mai 2028</div><div><div class="what">Encerramento do projeto</div><div class="det">Nenhuma atividade pode ocorrer depois desta data.</div></div></div>
+      <div class="tlrow"><div class="when">30 jun 2028</div><div><div class="what">Relat&oacute;rio final</div><div class="det">Narrativo e financeiro. Entrega dos resultados e do plano de continuidade.</div></div></div>
+    </div>
+  </section>
+
+  <!-- 5 — CRITÉRIOS REAIS -->
+  <section id="criterios">
+    <div class="shead"><span class="snum">V</span><h2>Como a proposta &eacute; avaliada (crit&eacute;rios reais)</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <p class="note" style="margin-top:0;margin-bottom:14px">Direto do Guidance v2, se&ccedil;&atilde;o 15. Cada crit&eacute;rio &eacute; pontuado de 0 a 20 e ponderado pelo peso abaixo. Total 100%. Estes s&atilde;o os pesos <b>oficiais</b> &mdash; n&atilde;o estimativas.</p>
+    <table class="crit">
+      <thead><tr><th>Crit&eacute;rio</th><th style="text-align:center">Peso</th><th>O que o avaliador realmente procura</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="cname">Project Quality &amp; Relevance</td>
+          <td class="w">35%</td>
+          <td><p><b>Consci&ecirc;ncia e alinhamento com o marco regulat&oacute;rio de TNE do pa&iacute;s parceiro</b> (o item de maior peso interno). Contribui&ccedil;&atilde;o &agrave;s necessidades dos <b>dois</b> pa&iacute;ses via mudan&ccedil;a institucional/de sistema. Benef&iacute;cio claro &agrave;s duas institui&ccedil;&otilde;es. Como acelera a remo&ccedil;&atilde;o de barreiras ao TNE. <b>Co-design e governan&ccedil;a conjunta paritária</b> entre Reino Unido e Brasil &mdash; obrigat&oacute;rio.</p></td>
+        </tr>
+        <tr>
+          <td class="cname">Methodology &amp; Design</td>
+          <td class="w">30%</td>
+          <td><p>Atividades bem planejadas, vi&aacute;veis e realistas. Outputs claros e como ser&atilde;o alcan&ccedil;ados. <b>Framework de monitoramento e avalia&ccedil;&atilde;o com indicadores definidos.</b> Cronograma realista. Metodologia articulada e exequ&iacute;vel no prazo. <b>Riscos e mitiga&ccedil;&otilde;es</b> claramente definidos.</p></td>
+        </tr>
+        <tr>
+          <td class="cname">Sustainability</td>
+          <td class="w">25%</td>
+          <td><p>Possibilidade de <b>TNE escal&aacute;vel</b> ap&oacute;s o piloto. Plano de como os benef&iacute;cios continuam (local/regional/nacional). <b>Post-grant pathways</b> (de explorat&oacute;rio &agrave; operacionaliza&ccedil;&atilde;o) e planos de <b>embedding e escala</b>. Mecanismo de <b>dissemina&ccedil;&atilde;o</b>. Como o projeto apoia a <b>lideran&ccedil;a, capacidade e autonomia de longo prazo do parceiro</b>.</p></td>
+        </tr>
+        <tr>
+          <td class="cname">Resources &amp; Value for Money</td>
+          <td class="w">10%</td>
+          <td><p>Custos justific&aacute;veis, sem desperd&iacute;cio, dentro dos caps. <b>Distribui&ccedil;&atilde;o equitativa do or&ccedil;amento</b> entre os parceiros. Pap&eacute;is e responsabilidades claros, com experi&ecirc;ncia compat&iacute;vel. Oportunidades de desenvolvimento para grupos sub-representados. Outputs devem refletir <b>co-autoria e contribui&ccedil;&atilde;o intelectual compartilhada</b>.</p></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="alert" style="margin-top:16px">
+      <h3>Gates de eliga&ccedil;&atilde;o &mdash; antes mesmo do m&eacute;rito</h3>
+      <p>Quatro coisas <b>derrubam a candidatura na triagem</b>, independentemente da nota: <b>(1)</b> a Gender Equality Statement inadequada &mdash; o British Council pode rejeitar se a considera&ccedil;&atilde;o de g&ecirc;nero for insuficiente ou se houver impacto negativo; <b>(2)</b> ser lido como <b>estudo de pesquisa</b> (&ldquo;TNE Grants do not fund research studies&rdquo;); <b>(3)</b> conformidade <b>ODA</b> ausente (o Brasil &eacute; pa&iacute;s ODA &mdash; o trabalho precisa se ligar a desenvolvimento e a pelo menos um ODS); <b>(4)</b> candidatura iniciada pelo lado n&atilde;o-brit&acirc;nico, documentos incompletos ou caps de or&ccedil;amento estourados.</p>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section id="esforco">
+    <div class="shead"><span class="snum">VI</span><h2>O esfor&ccedil;o, em duas fases</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+
+    <div class="effbox crunch">
+      <div class="ehead"><h3>Fase 1: montar a candidatura, agora at&eacute; 6 de julho</h3><div class="sub">&Eacute; o pico de esfor&ccedil;o. A candidatura oficial &eacute; completa, n&atilde;o um resumo de uma p&aacute;gina.</div></div>
+      <div class="ebody">
+        <div class="erow"><div class="et"><span class="ph">a</span>Identidade e objetivos do projeto<span class="who ou">OU + CEFOR</span></div><div class="ed">T&iacute;tulo (at&eacute; 25 palavras), prop&oacute;sito (at&eacute; 75), de 1 a 5 objetivos concretos (at&eacute; 120) e os ODS escolhidos com justificativa.</div></div>
+        <div class="erow"><div class="et"><span class="ph">b</span>N&uacute;cleo de TNE e reconhecimento<span class="who">CEFOR</span></div><div class="ed">Selecionar as Actions da TNE Strategy e o n&iacute;vel de impacto, e escrever a <b>an&aacute;lise do ambiente regulat&oacute;rio de reconhecimento no Brasil</b>. &Eacute; a parte mais t&eacute;cnica e a que mais pesa (ver se&ccedil;&atilde;o X).</div></div>
+        <div class="erow"><div class="et"><span class="ph">c</span>Atividades e monitoramento<span class="who ou">OU + CEFOR</span></div><div class="ed">At&eacute; 5 atividades, cada uma com tipo, descri&ccedil;&atilde;o, entreg&aacute;vel tang&iacute;vel, indicador de sucesso e meio de verifica&ccedil;&atilde;o. Use verbos de <b>explora&ccedil;&atilde;o e co-design</b>, nunca &ldquo;produzir o curso&rdquo; ou &ldquo;estudar o impacto&rdquo;.</div></div>
+        <div class="erow"><div class="et"><span class="ph">d</span>Resultados, benef&iacute;cios e sustentabilidade<span class="who ou">OU + CEFOR</span></div><div class="ed">Sa&iacute;das e benef&iacute;cios por ator, at&eacute; 5 resultados e o plano de continuidade com post-grant pathway.</div></div>
+        <div class="erow"><div class="et"><span class="ph">e</span>G&ecirc;nero e EDI<span class="who">CEFOR</span></div><div class="ed">Se&ccedil;&atilde;o inteira: an&aacute;lise com dados, medidas, impacto esperado, riscos e como medir. Foco particular e demonstr&aacute;vel na inclus&atilde;o de <b>mulheres e meninas</b>. Acessibilidade entra forte aqui.</div></div>
+        <div class="erow"><div class="et"><span class="ph">f</span>Or&ccedil;amento, riscos, comunica&ccedil;&atilde;o, &eacute;tica<span class="who ou">OU + CEFOR</span></div><div class="ed">Or&ccedil;amento dentro dos tetos, de 1 a 5 riscos com mitiga&ccedil;&atilde;o, plano de comunica&ccedil;&atilde;o, co-autoria e &eacute;tica/integridade. <b>Sem linha de PI/licen&ccedil;a</b> (inelegível).</div></div>
+        <div class="erow"><div class="et"><span class="ph">g</span>Documentos de apoio<span class="who ou">OU + CEFOR</span></div><div class="ed">Carta de apoio em papel timbrado e assinada de cada institui&ccedil;&atilde;o (a do IFES por algu&eacute;m com delega&ccedil;&atilde;o &mdash; reitoria/pr&oacute;-reitoria, n&atilde;o pela Vanessa, que &eacute; Lead Applicant), mais o CV de at&eacute; <b>3 p&aacute;ginas</b> de cada um dos dois Lead Applicants (Vanessa e Leigh-Anne).</div></div>
+        <div class="load"><b>Quem carrega o qu&ecirc;.</b> A OU lidera o preenchimento na plataforma e escreve a parte brit&acirc;nica. O CEFOR entrega o n&uacute;cleo de reconhecimento, as atividades, o conte&uacute;do de EDI e acessibilidade, a parte brasileira do or&ccedil;amento, a carta do IFES e o CV da Vanessa. Concentrado em poucas semanas.</div>
+      </div>
+    </div>
+
+    <div class="effbox">
+      <div class="ehead"><h3>Fase 2: executar o projeto, jan 2027 a meados de 2028</h3><div class="sub">Cerca de 17 meses, em ritmo leve e distribu&iacute;do, com dois relat&oacute;rios obrigat&oacute;rios.</div></div>
+      <div class="ebody">
+        <div class="erow"><div class="et"><span class="ph">1</span>Montagem e governan&ccedil;a (meses 1 a 2)</div><div class="ed">Constituir o comit&ecirc; diretor conjunto <b>paritário</b>, acertar pap&eacute;is e decis&otilde;es entre OU e CEFOR, e detalhar o plano de trabalho.</div></div>
+        <div class="erow"><div class="et"><span class="ph">2</span>Mapeamento de reconhecimento (meses 2 a 6)</div><div class="ed">Levantar barreiras regulat&oacute;rias e propor a equival&ecirc;ncia de cr&eacute;dito entre a microcredencial da OU (FHEQ N&iacute;vel 7) e a certifica&ccedil;&atilde;o do IFES, &agrave; luz da Plataforma Carolina Bori e da aus&ecirc;ncia de marco federal de microcredenciais.</div></div>
+        <div class="erow"><div class="et"><span class="ph">3</span>Co-desenho da microcredencial (meses 4 a 10)</div><div class="ed">Sprints e oficinas conjuntas para <b>co-adaptar</b> uma microcredencial inclusiva existente da OU ao contexto brasileiro, com acessibilidade embutida desde o in&iacute;cio. M&eacute;todo ADDIEM (CEFOR) aplicado lado a lado com o learning design do IET.</div></div>
+        <div class="erow"><div class="et"><span class="ph">4</span>Piloto pequeno (meses 9 a 14)</div><div class="ed">Testar com uma coorte-alvo definida &mdash; por exemplo <b>professoras da Rede Federal</b> &mdash; e coletar evid&ecirc;ncias de alcance e inclus&atilde;o.</div></div>
+        <div class="erow"><div class="et"><span class="ph">5</span>Relat&oacute;rio de progresso (ago 2027)</div><div class="ed">Presta&ccedil;&atilde;o de contas parcial e ajuste de rota.</div></div>
+        <div class="erow"><div class="et"><span class="ph">6</span>Consolida&ccedil;&atilde;o e continuidade (at&eacute; jun 2028)</div><div class="ed">Dissemina&ccedil;&atilde;o no CONCEFOR, assinatura de um MoU, roteiro para um edital maior e relat&oacute;rio final.</div></div>
+        <div class="load"><b>Carga de trabalho.</b> N&atilde;o &eacute; dedica&ccedil;&atilde;o integral. Poucas horas por semana por pessoa, com picos nos sprints de co-desenho, no piloto e nas duas datas de relat&oacute;rio. A OU tamb&eacute;m assume a gest&atilde;o financeira e o repasse do recurso.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 — TIME -->
+  <section id="time">
+    <div class="shead"><span class="snum">VII</span><h2>O time, ponta a ponta</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <p class="note" style="margin-top:0;margin-bottom:14px">A proposta est&aacute; sendo desenhada conjuntamente por <b>Vanessa Battestin</b> (CEFOR), <b>Felipe Tessarolo</b> e <b>Leigh-Anne Perryman</b> (OU/IET). Os dois <b>Lead Applicants</b> que assinam o CV s&atilde;o a <b>Vanessa</b> (Brasil) e a <b>Leigh-Anne</b> (Reino Unido).</p>
+    <div class="teams">
+      <div class="team br">
+        <h3>Brasil &middot; CEFOR/IFES</h3>
+        <div class="member"><div class="nm">Vanessa Battestin</div><div class="tags"><span class="tg lead">Lead Applicant BR</span><span class="tg star">Preside a comiss&atilde;o MOOC</span></div><div class="rl">Doutora em Educa&ccedil;&atilde;o (UFES, 2012). Coordenadora da UAB no IFES e vice-coordenadora do GT de Institucionaliza&ccedil;&atilde;o da EaD no <b>CONIF desde 2016</b> (alcance nacional). Autoridade direta sobre a certifica&ccedil;&atilde;o no Brasil.</div><div class="as">Ativos para a proposta: m&eacute;todo pr&oacute;prio <b>ADDIEM</b> de cria&ccedil;&atilde;o de MOOC (publicado) &middot; <b>1&ordm; lugar no CBIE 2024</b> com MOOC inclusivo para a comunidade surda &middot; plataforma com ~296 mil matr&iacute;culas.</div></div>
+        <div class="member"><div class="nm">Elton Vinicius</div><div class="rl">Design e tecnologia educacional. IA aplicada, Moodle, membro da comiss&atilde;o MOOC, UX e UI com IA.</div></div>
+        <div class="member"><div class="nm">Marquito</div><div class="rl">Desenvolvedor e Coordenador da CGTE, decide t&eacute;cnica e gerencialmente. IA aplicada, Moodle, membro da comiss&atilde;o MOOC.</div></div>
+      </div>
+      <div class="team uk">
+        <h3>Reino Unido &middot; OU / IET</h3>
+        <div class="member"><div class="nm">Leigh-Anne Perryman</div><div class="tags"><span class="tg lead">Lead Applicant UK</span><span class="tg star">Microcredentials Lead</span></div><div class="rl">Senior Lecturer e Associate Director (Curriculum) do IET; Microcredentials Lead e Qualification Director do <b>MA Online Teaching</b>. Pesquisa reconhecimento/empilhamento de microcredenciais, open education, equidade e ODS (foco em SDG 5 e 13).</div><div class="as">&Acirc;ncora da proposta: ela <b>j&aacute; possui</b> microcredenciais FHEQ N&iacute;vel 7 sobre o tema &mdash; HZVM884 (Accessibility &amp; Inclusive Learning) e HZVM885 (Social, Race &amp; Gender Equity) &mdash; que empilham no MA Online Teaching.</div></div>
+        <div class="member"><div class="nm">Felipe Tessarolo</div><div class="rl">Learning and Teaching Enhancement Manager no IET/OU. Brasileiro capixaba (UFES/FAESA), SFHEA. Learning design, <b>acessibilidade</b> (&ldquo;Accessible by Design&rdquo;) e IA respons&aacute;vel (projeto AIDA). &Eacute; a <b>ponte</b> que aproximou a Vanessa e a camada de acessibilidade/learning design do lado brit&acirc;nico.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 — CAMINHOS -->
+  <section id="caminhos">
+    <div class="shead"><span class="snum">VIII</span><h2>Os caminhos, com as notas</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <div class="ranknote">
+      O &iacute;ndice de aprova&ccedil;&atilde;o (0&ndash;100) &eacute; a soma ponderada de quatro notas estimadas pelos <b>pesos oficiais</b> do edital. As notas por crit&eacute;rio s&atilde;o estimativa pr&oacute;pria, expostas para voc&ecirc; discordar item a item. <b>Mudan&ccedil;a nesta vers&atilde;o:</b> os antigos Caminhos 3 (IA) e 4 (analytics) sa&iacute;ram &mdash; corriam risco de serem lidos como <b>pesquisa</b> &mdash; e deram lugar a dois caminhos genuinamente TNE: <b>di&aacute;logo de pol&iacute;tica/QA</b> e <b>microcredencial conjunta co-certificada</b>.
+      <div class="mini">
+        <span class="wp"><b>35%</b> Quality &amp; Relevance</span>
+        <span class="wp"><b>30%</b> Methodology &amp; Design</span>
+        <span class="wp"><b>25%</b> Sustainability</span>
+        <span class="wp"><b>10%</b> Resources / VfM</span>
+      </div>
+    </div>
+
+    <!-- PATH 1 -->
+    <div class="path win">
+      <div class="phead">
+        <div class="pn">1</div>
+        <div class="pt"><h3>Framework de reconhecimento de microcredencial inclusiva, com co-adapta&ccedil;&atilde;o Reino Unido&ndash;Brasil</h3><div class="concept">Co-desenhar um <b>framework de equival&ecirc;ncia de cr&eacute;dito e reconhecimento</b> entre uma microcredencial inclusiva <b>j&aacute; existente</b> da OU (FHEQ N&iacute;vel 7, da Leigh-Anne) e a certifica&ccedil;&atilde;o MOOC do IFES, mapeando as barreiras regulat&oacute;rias brasileiras, com um piloto inclusivo voltado a professoras da Rede Federal. Acessibilidade e IA respons&aacute;vel entram como diferencial, n&atilde;o como eixo de pesquisa.</div></div>
+        <span class="reco">Recomendado</span>
+      </div>
+      <div class="indexbar"><span class="lab">&Iacute;ndice de aprova&ccedil;&atilde;o</span><div class="track"><div class="fill" style="width:88%"></div></div><span class="val">88</span></div>
+      <table class="score">
+        <caption>Como cheguei ao 88</caption>
+        <thead><tr><th>Crit&eacute;rio</th><th>Peso</th><th>Nota /100</th><th>Pontos</th></tr></thead>
+        <tbody>
+          <tr><td>Quality &amp; Relevance</td><td class="v">35%</td><td class="v">92</td><td class="v">32,2</td></tr>
+          <tr><td>Methodology &amp; Design</td><td class="v">30%</td><td class="v">86</td><td class="v">25,8</td></tr>
+          <tr><td>Sustainability</td><td class="v">25%</td><td class="v">88</td><td class="v">22,0</td></tr>
+          <tr><td>Resources / VfM</td><td class="v">10%</td><td class="v">80</td><td class="v">8,0</td></tr>
+          <tr class="tot"><td>&Iacute;ndice</td><td></td><td></td><td class="v">88,0</td></tr>
+        </tbody>
+      </table>
+      <div class="pbody">
+        <div class="twocol">
+          <div class="block"><div class="h">O que entrega</div><ul class="cl deliv"><li>Mapa das barreiras regulat&oacute;rias de reconhecimento no Brasil</li><li>Framework de equival&ecirc;ncia de cr&eacute;dito Reino Unido&ndash;Brasil (blueprint)</li><li>Microcredencial inclusiva co-adaptada ao contexto brasileiro</li><li>Piloto pequeno com professoras da Rede Federal + roadmap de escala</li></ul></div>
+          <div class="block"><div class="h">Balan&ccedil;o da nota</div><ul class="cl pro"><li>Atinge o item de maior peso: alinhamento ao marco regulat&oacute;rio (Action 3)</li><li>Cai no mandato exato da líder, a Microcredentials Lead</li><li>N&atilde;o &eacute; pesquisa nem produ&ccedil;&atilde;o de conte&uacute;do &mdash; foge dos gates</li><li>Co-autoria real: ADDIEM (CEFOR) + microcredencial L7 (OU)</li></ul><ul class="cl con" style="margin-top:4px"><li>Exige disciplina para n&atilde;o escorregar para &ldquo;produzir o MOOC&rdquo;</li></ul></div>
+        </div>
+        <div class="block sr"><div class="h">Como deixar a proposta mais forte</div><ul class="cl sr">
+          <li><b>Ancore numa microcredencial que j&aacute; existe</b> (HZVM884/885 da Leigh-Anne) em vez de inventar uma nova &mdash; elimina a leitura de &ldquo;produ&ccedil;&atilde;o de conte&uacute;do&rdquo; e cabe no or&ccedil;amento.</li>
+          <li>Trate o reconhecimento como pacote de trabalho pr&oacute;prio: mapeie as barreiras (carga hor&aacute;ria, certifica&ccedil;&atilde;o MEC, Carolina Bori, aus&ecirc;ncia de marco federal de microcredenciais) e proponha uma equival&ecirc;ncia documentada via <b>OUVP</b> e RPL.</li>
+          <li>Fixe desde j&aacute; a coorte-alvo (<b>professoras</b> da Rede Federal) e o piloto nomeado, com metas de alcance e acessibilidade (WCAG, VLibras) embutida no desenho.</li>
+          <li>Amarre a sustentabilidade a um MoU assinado e a um roteiro rumo a um edital maior do Going Global, com endosso do CONIF para evidenciar escala nacional.</li>
+          <li>Defina governan&ccedil;a <b>paritária</b>: comit&ecirc; diretor, propriedade do cr&eacute;dito, prote&ccedil;&atilde;o de dados (LGPD e UK GDPR).</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- PATH 2 -->
+    <div class="path">
+      <div class="phead">
+        <div class="pn">2</div>
+        <div class="pt"><h3>Capacita&ccedil;&atilde;o docente e comunidade de pr&aacute;tica Reino Unido&ndash;Brasil</h3><div class="concept">Programa de forma&ccedil;&atilde;o de formadores em learning design e ensino online inclusivo, com uma comunidade de pr&aacute;tica viva entre as institui&ccedil;&otilde;es e o CONCEFOR como palco de dissemina&ccedil;&atilde;o. Alinhado &agrave; Action 4 e &agrave; Action 3 (comunidades de pr&aacute;tica).</div></div>
+      </div>
+      <div class="indexbar"><span class="lab">&Iacute;ndice de aprova&ccedil;&atilde;o</span><div class="track"><div class="fill" style="width:78%"></div></div><span class="val">78</span></div>
+      <table class="score">
+        <caption>Como cheguei ao 78</caption>
+        <thead><tr><th>Crit&eacute;rio</th><th>Peso</th><th>Nota /100</th><th>Pontos</th></tr></thead>
+        <tbody>
+          <tr><td>Quality &amp; Relevance</td><td class="v">35%</td><td class="v">70</td><td class="v">24,5</td></tr>
+          <tr><td>Methodology &amp; Design</td><td class="v">30%</td><td class="v">80</td><td class="v">24,0</td></tr>
+          <tr><td>Sustainability</td><td class="v">25%</td><td class="v">82</td><td class="v">20,5</td></tr>
+          <tr><td>Resources / VfM</td><td class="v">10%</td><td class="v">88</td><td class="v">8,8</td></tr>
+          <tr class="tot"><td>&Iacute;ndice</td><td></td><td></td><td class="v">77,8</td></tr>
+        </tbody>
+      </table>
+      <div class="pbody">
+        <div class="twocol">
+          <div class="block"><div class="h">O que entrega</div><ul class="cl deliv"><li>Desenho do programa de forma&ccedil;&atilde;o de formadores e materiais-piloto</li><li>Comunidade de pr&aacute;tica ativa entre OU e Rede Federal</li><li>Guia aberto (OER) co-autorado</li><li>Plano de continuidade e dissemina&ccedil;&atilde;o via CONCEFOR</li></ul></div>
+          <div class="block"><div class="h">Balan&ccedil;o da nota</div><ul class="cl pro"><li>Bate em v&aacute;rias Actions; barato e muito entreg&aacute;vel (sobe VfM)</li><li>Dissemina&ccedil;&atilde;o garantida via CONCEFOR/CONIF</li></ul><ul class="cl con" style="margin-top:4px"><li>Menos distintivo e toca de leve no reconhecimento, o que limita Quality</li><li>Risco de soar como &ldquo;treinamento&rdquo; sem entreg&aacute;vel de sistema</li></ul></div>
+        </div>
+        <div class="block sr"><div class="h">Como deixar mais forte</div><ul class="cl sr">
+          <li>Come&ccedil;ar por um diagn&oacute;stico de necessidades dos docentes da Rede, para responder &agrave; demanda real.</li>
+          <li>Reaproveitar os m&oacute;dulos de teacher development que o IET j&aacute; tem como espinha, adaptando ao contexto brasileiro.</li>
+          <li><b>Melhor papel:</b> entrar como a frente de <b>dissemina&ccedil;&atilde;o e capacity building</b> dentro do Caminho 1.</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- PATH 3 (NOVO) -->
+    <div class="path">
+      <div class="phead">
+        <div class="pn">3</div>
+        <div class="pt"><h3>Di&aacute;logo de pol&iacute;tica e framework de garantia de qualidade para microcredenciais TNE</h3><div class="concept">Convocar atores do Brasil (CONIF, adjac&ecirc;ncia MEC/CNE) e do Reino Unido (QAA, UK ENIC) para co-produzir <b>diretrizes de garantia de qualidade e um framework de reconhecimento</b> para microcredenciais TNE &mdash; preenchendo o v&aacute;cuo regulat&oacute;rio brasileiro. Impacto de <b>sistema</b>, Action 3.</div></div>
+      </div>
+      <div class="indexbar"><span class="lab">&Iacute;ndice de aprova&ccedil;&atilde;o</span><div class="track"><div class="fill" style="width:76%"></div></div><span class="val">76</span></div>
+      <table class="score">
+        <caption>Como cheguei ao 76</caption>
+        <thead><tr><th>Crit&eacute;rio</th><th>Peso</th><th>Nota /100</th><th>Pontos</th></tr></thead>
+        <tbody>
+          <tr><td>Quality &amp; Relevance</td><td class="v">35%</td><td class="v">86</td><td class="v">30,1</td></tr>
+          <tr><td>Methodology &amp; Design</td><td class="v">30%</td><td class="v">68</td><td class="v">20,4</td></tr>
+          <tr><td>Sustainability</td><td class="v">25%</td><td class="v">78</td><td class="v">19,5</td></tr>
+          <tr><td>Resources / VfM</td><td class="v">10%</td><td class="v">62</td><td class="v">6,2</td></tr>
+          <tr class="tot"><td>&Iacute;ndice</td><td></td><td></td><td class="v">76,2</td></tr>
+        </tbody>
+      </table>
+      <div class="pbody">
+        <div class="twocol">
+          <div class="block"><div class="h">O que entrega</div><ul class="cl deliv"><li>Mapa de barreiras regulat&oacute;rias e de QA do reconhecimento de microcredenciais</li><li>Diretrizes de garantia de qualidade co-produzidas (Reino Unido + Brasil)</li><li>Memorando de di&aacute;logo de pol&iacute;tica com recomenda&ccedil;&otilde;es</li><li>Rede de stakeholders mobilizada (CONIF, MEC/CNE, QAA, UK ENIC)</li></ul></div>
+          <div class="block"><div class="h">Balan&ccedil;o da nota</div><ul class="cl pro"><li>Atinge o cora&ccedil;&atilde;o do crit&eacute;rio de maior peso (marco regulat&oacute;rio, Action 3)</li><li>Impacto de sistema alto &mdash; exatamente o que o edital busca</li></ul><ul class="cl con" style="margin-top:4px"><li>Ambicioso demais para &pound;25k/17 meses; risco de virar &ldquo;an&aacute;lise preparat&oacute;ria&rdquo; sem entreg&aacute;vel tang&iacute;vel</li><li>Indicadores de M&amp;A mais dif&iacute;ceis de definir; depende de mobilizar &oacute;rg&atilde;os fora do controle do time</li><li>Custos de convening/viagem pressionam o VfM</li></ul></div>
+        </div>
+        <div class="block sr"><div class="h">Como deixar mais forte</div><ul class="cl sr">
+          <li>Amarrar o di&aacute;logo a um entreg&aacute;vel concreto (as diretrizes de QA), n&atilde;o s&oacute; a reuni&otilde;es.</li>
+          <li><b>Melhor papel:</b> entrar como o <b>pacote de sistema/pol&iacute;tica</b> dentro do Caminho 1, ou como a evolu&ccedil;&atilde;o p&oacute;s-grant que destrava um edital maior.</li>
+        </ul></div>
+      </div>
+    </div>
+
+    <!-- PATH 4 (NOVO) -->
+    <div class="path">
+      <div class="phead">
+        <div class="pn">4</div>
+        <div class="pt"><h3>Estudo de viabilidade de microcredencial conjunta co-certificada (modelo de joint award)</h3><div class="concept">Explorar a viabilidade de uma microcredencial <b>conjunta co-certificada OU + IFES</b> &mdash; um modelo de <i>joint award</i> no n&iacute;vel micro &mdash; com desenho, governan&ccedil;a de co-certifica&ccedil;&atilde;o e requisitos de QA dos dois lados. Action 2 (modelos de TNE: dual/double/joint).</div></div>
+      </div>
+      <div class="indexbar"><span class="lab">&Iacute;ndice de aprova&ccedil;&atilde;o</span><div class="track"><div class="fill" style="width:72%"></div></div><span class="val">72</span></div>
+      <table class="score">
+        <caption>Como cheguei ao 72</caption>
+        <thead><tr><th>Crit&eacute;rio</th><th>Peso</th><th>Nota /100</th><th>Pontos</th></tr></thead>
+        <tbody>
+          <tr><td>Quality &amp; Relevance</td><td class="v">35%</td><td class="v">76</td><td class="v">26,6</td></tr>
+          <tr><td>Methodology &amp; Design</td><td class="v">30%</td><td class="v">74</td><td class="v">22,2</td></tr>
+          <tr><td>Sustainability</td><td class="v">25%</td><td class="v">70</td><td class="v">17,5</td></tr>
+          <tr><td>Resources / VfM</td><td class="v">10%</td><td class="v">66</td><td class="v">6,6</td></tr>
+          <tr class="tot"><td>&Iacute;ndice</td><td></td><td></td><td class="v">72,9</td></tr>
+        </tbody>
+      </table>
+      <div class="pbody">
+        <div class="twocol">
+          <div class="block"><div class="h">O que entrega</div><ul class="cl deliv"><li>Estudo de viabilidade de co-certifica&ccedil;&atilde;o OU + IFES</li><li>Modelo de governan&ccedil;a de uma credencial conjunta</li><li>Requisitos de QA bilaterais mapeados</li><li>Decis&atilde;o go/no-go para um piloto futuro</li></ul></div>
+          <div class="block"><div class="h">Balan&ccedil;o da nota</div><ul class="cl pro"><li>Modelo de TNE conjunto (joint) explicitamente citado no edital</li><li>Ambi&ccedil;&atilde;o alinhada &agrave; reputa&ccedil;&atilde;o de qualidade (Action 2)</li></ul><ul class="cl con" style="margin-top:4px"><li>Co-certifica&ccedil;&atilde;o formal pode esbarrar em PI/marca (inelegível) e exceder o escopo explorat&oacute;rio</li><li>Mais arriscado que reconhecer uma credencial j&aacute; existente</li></ul></div>
+        </div>
+        <div class="block sr"><div class="h">Como deixar mais forte</div><ul class="cl sr">
+          <li>Manter no n&iacute;vel de <b>estudo de viabilidade</b> (sem comprometer marca/IP no or&ccedil;amento).</li>
+          <li><b>Melhor papel:</b> a fase 2 / evolu&ccedil;&atilde;o p&oacute;s-grant natural do Caminho 1, depois que o reconhecimento estiver mapeado.</li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 — PONTOS CEGOS -->
+  <section id="pontos-cegos">
+    <div class="shead"><span class="snum">IX</span><h2>O que n&atilde;o est&aacute;vamos vendo</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <p class="note" style="margin-top:0;margin-bottom:14px">Os riscos e oportunidades que a leitura do edital e a pesquisa trouxeram &mdash; em ordem de severidade. Estes pontos atacam tanto os gates de eliga&ccedil;&atilde;o quanto os 65% do score em Quality + Methodology.</p>
+    <div class="bgrid">
+      <div class="bcard crit">
+        <div class="bt"><span class="sev c">Cr&iacute;tico</span>O slot das na&ccedil;&otilde;es devolvidas pode dobrar ou triplicar a chance</div>
+        <p>O Brasil &eacute; eleg&iacute;vel para os <b>3 grants extras</b> reservados a institui&ccedil;&otilde;es do Pa&iacute;s de Gales, Esc&oacute;cia e Irlanda do Norte &mdash; um pool muito menos disputado que os ~2 grants gerais do Brasil. A OU &eacute; regulada pelo <b>OfS (Inglaterra)</b>, ent&atilde;o provavelmente compete s&oacute; nos 2 gerais. Mas a OU &eacute; uma institui&ccedil;&atilde;o de todo o Reino Unido (OU in Scotland, OU in Wales, registro de caridade escoc&ecirc;s, financiamento HEFCW/SFC) &mdash; status amb&iacute;guo.</p>
+        <div class="act"><b>A&ccedil;&atilde;o:</b> esta &eacute; a pergunta n&ordm; 1 ao British Council, por e-mail, agora. Se houver caminho pelo slot devolvido (ou via co-lead gal&ecirc;s/escoc&ecirc;s), a probabilidade muda de patamar.</div>
+      </div>
+      <div class="bcard crit">
+        <div class="bt"><span class="sev c">Cr&iacute;tico</span>&ldquo;N&atilde;o financiamos pesquisa&rdquo; + time forte em MOOC = rota de colis&atilde;o</div>
+        <p>Times de MOOC tendem a propor &ldquo;desenvolver/pesquisar/pilotar conte&uacute;do&rdquo;, que o avaliador l&ecirc; como projeto de <b>pesquisa ou produ&ccedil;&atilde;o de conte&uacute;do</b> &mdash; nenhum dos dois &eacute; financi&aacute;vel. Atividades TNE leg&iacute;timas: co-desenhar curr&iacute;culo/framework, capacitar staff, trabalhar rumo ao <b>reconhecimento de graus do Reino Unido</b>, comunidades de pr&aacute;tica.</p>
+        <div class="act"><b>A&ccedil;&atilde;o:</b> reescrever cada atividade no verbo de &ldquo;explora&ccedil;&atilde;o e co-design de parceria e de framework de reconhecimento&rdquo;.</div>
+      </div>
+      <div class="bcard crit">
+        <div class="bt"><span class="sev c">Cr&iacute;tico</span>Custos de PI/licen&ccedil;a s&atilde;o inelegíveis &mdash; e reconhecimento de credencial os atrai</div>
+        <p>Uma microcredencial com reconhecimento m&uacute;tuo costuma arrastar licenciamento de marca/plataforma e direitos de conte&uacute;do &mdash; exatamente o que o edital pro&iacute;be custear. Linha de PI/licen&ccedil;a no or&ccedil;amento pode barrar a candidatura na checagem de custos.</p>
+        <div class="act"><b>A&ccedil;&atilde;o:</b> separar &ldquo;explora&ccedil;&atilde;o do modelo de reconhecimento&rdquo; (eleg&iacute;vel) de &ldquo;aquisi&ccedil;&atilde;o de licen&ccedil;a/IP&rdquo; (fora do or&ccedil;amento, como contribui&ccedil;&atilde;o in-kind).</div>
+      </div>
+      <div class="bcard">
+        <div class="bt"><span class="sev a">Alto</span>Gender Equality Statement &eacute; gate eliminat&oacute;rio &mdash; n&atilde;o basta um par&aacute;grafo</div>
+        <p>O British Council pode <b>rejeitar</b> se a considera&ccedil;&atilde;o de g&ecirc;nero for insuficiente. &ldquo;Doc&ecirc;ncia inclusiva&rdquo; &eacute; gen&eacute;rico demais; querem um mecanismo espec&iacute;fico de inclus&atilde;o de <b>mulheres e meninas</b>. Voc&ecirc;s t&ecirc;m o ativo perfeito e n&atilde;o est&atilde;o usando: o <b>MOOC premiado de inclus&atilde;o (CBIE 2024)</b> prova capacidade real.</p>
+        <div class="act"><b>A&ccedil;&atilde;o:</b> piloto dirigido a professoras (ex.: docentes mulheres da Rede Federal/EaD em regi&otilde;es de baixa densidade do ES), com indicadores desagregados por g&ecirc;nero.</div>
+      </div>
+      <div class="bcard">
+        <div class="bt"><span class="sev a">Alto</span>Compet&iacute;&ccedil;&atilde;o brutal no Brasil; &ldquo;Global.edu&rdquo; &eacute; argumento fraco</div>
+        <p>S&oacute; ~2 grants gerais; USP, Unicamp e Unisinos s&atilde;o <b>coordenadoras</b> de redes CAPES-Global.edu. O IFES &eacute; apenas <b>associado</b> (Rede Globalis, coordenada pela UEM). O &ldquo;especialmente encorajado&rdquo; &eacute; compartilhado por dezenas de concorrentes mais fortes.</p>
+        <div class="act"><b>A&ccedil;&atilde;o:</b> n&atilde;o ancorar a narrativa em &ldquo;somos Global.edu&rdquo;; diferenciar pelo nicho que ningu&eacute;m mais ocupa (abaixo).</div>
+      </div>
+      <div class="bcard">
+        <div class="bt"><span class="sev a">Alto</span>O nicho que os gigantes n&atilde;o ocupam &eacute; o seu</div>
+        <p>USP/Unicamp competem por internacionaliza&ccedil;&atilde;o de p&oacute;s-gradua&ccedil;&atilde;o stricto sensu/pesquisa. O CEFOR ocupa um espa&ccedil;o que elas n&atilde;o tocam: <b>TNE para forma&ccedil;&atilde;o de docentes da Rede Federal + EaD/MOOC em escala + inclus&atilde;o comprovada</b> &mdash; alinhado &agrave;s Actions 3 e 4 da TNE Strategy.</p>
+        <div class="act"><b>A&ccedil;&atilde;o:</b> posicionar a proposta neste nicho, menos disputado e mais distintivo.</div>
+      </div>
+      <div class="bcard">
+        <div class="bt"><span class="sev a">Alto</span>Co-design e governan&ccedil;a paritária s&atilde;o pontuados, n&atilde;o decorativos</div>
+        <p>Uma proposta liderada/desenhada pela OU (com IFES s&oacute; como campo de testes) ser&aacute; lida como <b>assim&eacute;trica</b> &mdash; o oposto de &ldquo;internacionaliza&ccedil;&atilde;o equitativa&rdquo;. Isso pesa em Quality (35%) e Resources (co-autoria).</p>
+        <div class="act"><b>A&ccedil;&atilde;o:</b> evidenciar contribui&ccedil;&atilde;o intelectual real do CEFOR (m&eacute;todo ADDIEM, expertise MOOC, inclus&atilde;o), comit&ecirc; paritário e co-autoria do framework.</div>
+      </div>
+      <div class="bcard">
+        <div class="bt"><span class="sev m">M&eacute;dio</span>O IFES qualifica como provedor de ensino superior &mdash; mas confirme e blinde</div>
+        <p>Boa not&iacute;cia: a <b>Lei 11.892/2008</b> define os Institutos Federais como institui&ccedil;&otilde;es de educa&ccedil;&atilde;o superior e os <b>equipara &agrave;s universidades federais</b>; o IFES oferece bacharelado, licenciatura, tecn&oacute;logo e p&oacute;s. Logo, n&atilde;o cai na exclus&atilde;o de TVET/FE. Risco residual: &ldquo;Instituto Federal&rdquo; soa vocacional para olhos brit&acirc;nicos.</p>
+        <div class="act"><b>A&ccedil;&atilde;o:</b> citar a base legal preventivamente na se&ccedil;&atilde;o de elegibilidade do parceiro.</div>
+      </div>
+      <div class="bcard">
+        <div class="bt"><span class="sev m">M&eacute;dio</span>Caps de or&ccedil;amento penalizam mentalidade de MOOC</div>
+        <p>Pessoal = teto <b>30%</b>, expertise <b>20%</b>, viagem <b>20%</b>, em &pound;25k/17 meses. Se o trabalho for &ldquo;construir o curso&rdquo;, o or&ccedil;amento n&atilde;o fecha E refor&ccedil;a a leitura de &ldquo;desenvolvimento&rdquo;.</p>
+        <div class="act"><b>A&ccedil;&atilde;o:</b> desenhar como workshops de co-design, miss&otilde;es curtas e produ&ccedil;&atilde;o de frameworks/guidelines.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 — NÚCLEO REGULATÓRIO -->
+  <section id="regulatorio">
+    <div class="shead"><span class="snum">X</span><h2>O n&uacute;cleo regulat&oacute;rio brasileiro &mdash; o produto premiado</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <p class="lede">O item de <b>maior peso</b> dentro de Quality &amp; Relevance &eacute; demonstrar consci&ecirc;ncia do <b>marco regulat&oacute;rio de TNE do pa&iacute;s parceiro</b>. E aqui o Brasil oferece um v&aacute;cuo genu&iacute;no, que &eacute; exatamente o que o edital quer ver mapeado (impacto de <b>sistema</b>, n&atilde;o pesquisa). Mapear isso &eacute; o cora&ccedil;&atilde;o leg&iacute;timo e blindado da proposta.</p>
+    <div class="bens">
+      <div class="ben"><div class="idx">1</div><div><h4>Reconhecimento de diploma estrangeiro &eacute; maduro &mdash; mas s&oacute; para diplomas completos</h4><p>A <b>Plataforma Carolina Bori</b> (MEC) &eacute; o sistema oficial, regido pela Resolu&ccedil;&atilde;o CNE/CES n&ordm; 3/2016 e Portaria Normativa MEC n&ordm; 22/2016. S&oacute; reconhece <b>diplomas completos</b> de gradua&ccedil;&atilde;o (revalida&ccedil;&atilde;o) e p&oacute;s stricto sensu (reconhecimento) &mdash; n&atilde;o cr&eacute;ditos parciais nem microcredenciais.</p></div></div>
+      <div class="ben"><div class="idx">2</div><div><h4>N&atilde;o existe marco federal de microcredenciais no ensino superior</h4><p>Lacuna confirmada: sem parecer CNE consolidado nem Quadro Nacional de Qualifica&ccedil;&otilde;es vigente. A &uacute;nica regulamenta&ccedil;&atilde;o &eacute; <b>estadual</b> &mdash; Paran&aacute; (Delibera&ccedil;&atilde;o CEE/PR n&ordm; 01/2025, com credita&ccedil;&atilde;o em grades e registro em blockchain). O novo marco da EaD (Decreto n&ordm; 12.456/2025) <b>n&atilde;o cobre</b> microcredenciais.</p></div></div>
+      <div class="ben"><div class="idx">3</div><div><h4>N&atilde;o h&aacute; instrumento de reconhecimento m&uacute;tuo Reino Unido&ndash;Brasil</h4><p>O Reino Unido adere &agrave; <b>Lisbon Recognition Convention</b>; o Brasil <b>n&atilde;o</b> &mdash; pertence &agrave; Conven&ccedil;&atilde;o de Buenos Aires (2019). N&atilde;o h&aacute; ponte bilateral autom&aacute;tica; a Global Convention da UNESCO seria a futura ponte. Quadros n&atilde;o interoper&aacute;veis = barreira clara a mapear.</p></div></div>
+      <div class="ben"><div class="idx">4</div><div><h4>O pr&oacute;prio British Council confirma a lacuna</h4><p>O mapeamento do British Council sobre microcredenciais na Am&eacute;rica Latina conclui que os frameworks nacionais de acredita&ccedil;&atilde;o, QA e reconhecimento &mdash; sobretudo via TNE &mdash; permanecem <b>limitados ou fragmentados</b>. Endere&ccedil;ar isso &eacute; falar a l&iacute;ngua do financiador.</p></div></div>
+    </div>
+    <p class="note"><b>Ponto de aten&ccedil;&atilde;o sobre o IFES.</b> O IFES participa do <b>CAPES Global.edu</b> (Edital 013/2025, Rede Globalis), o que ancora institucionalmente a internacionaliza&ccedil;&atilde;o &mdash; mas esse programa &eacute; de p&oacute;s-gradua&ccedil;&atilde;o stricto sensu, n&atilde;o de microcredenciais. Use como sinal de robustez institucional, n&atilde;o como n&uacute;cleo da proposta.</p>
+  </section>
+
+  <!-- 11 — MECANISMOS DA OU -->
+  <section id="mecanismos">
+    <div class="shead"><span class="snum">XI</span><h2>Os mecanismos de reconhecimento que a OU j&aacute; tem</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <p class="lede">Em vez de prometer um &ldquo;reconhecimento m&uacute;tuo&rdquo; gen&eacute;rico, a proposta pode apoiar-se em instrumentos <b>reais e existentes</b> da Open University &mdash; o que d&aacute; credibilidade imediata &agrave; trilha de reconhecimento.</p>
+    <div class="ex">
+      <div class="exc"><div class="k">Mecanismo</div><h4>OUVP (desde 1992)</h4><p>O <b>OU Validation Partnerships</b> valida programas de institui&ccedil;&otilde;es <b>sem degree-awarding powers</b>, inclusive no exterior (~390 programas, 40+ parceiros internacionais). Desenhado exatamente para o cen&aacute;rio de uma parceria TNE. A confirmar: cobre microcredenciais?</p></div>
+      <div class="exc"><div class="k">Mecanismo</div><h4>Stacking FHEQ N&iacute;vel 7</h4><p>Microcredenciais de p&oacute;s da OU valem <b>15 cr&eacute;ditos</b> (FHEQ L7) e empilham at&eacute; 60, rumo a qualifica&ccedil;&otilde;es maiores &mdash; ex.: o <b>MA Online Teaching</b> da pr&oacute;pria Leigh-Anne. As microcredenciais HZVM884/885 j&aacute; tratam de acessibilidade, inclus&atilde;o e equidade.</p></div>
+      <div class="exc"><div class="k">Mecanismo</div><h4>RPL / Credit Transfer</h4><p>O esquema de <b>Recognition of Prior Learning</b> das Academic Regulations da OU permite reconhecer cr&eacute;dito pr&eacute;vio rumo a qualifica&ccedil;&otilde;es formais &mdash; o gancho t&eacute;cnico para tornar uma microcredencial creditável de um lado a outro.</p></div>
+    </div>
+    <p class="note"><b>Elegibilidade da OU como Lead.</b> Confirmada: a Open University tem degree-awarding powers por Royal Charter (1969), &eacute; regulada pelo OfS e subscreve a QAA. O IET (diretor: Prof. Bart Rienties) traz learning design, acessibilidade, IA e analytics de ponta para o co-desenho.</p>
+  </section>
+
+  <!-- 12 — PRECEDENTES -->
+  <section id="precedentes">
+    <div class="shead"><span class="snum">XII</span><h2>Quem j&aacute; ganhou &mdash; e o que isso ensina</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <p class="note" style="margin-top:0;margin-bottom:14px">O British Council n&atilde;o publica lista central de vencedores, mas h&aacute; precedentes Reino Unido&ndash;Brasil documentados. O padr&atilde;o &eacute; consistente: <b>capacity building, co-design de curr&iacute;culo, frameworks de QA, reconhecimento m&uacute;tuo de qualifica&ccedil;&otilde;es (MRQ) e graus duplos/cotutela</b> &mdash; nunca pesquisa pura.</p>
+    <div class="bens">
+      <div class="ben"><div class="idx">&middot;</div><div><h4>Coventry University &times; UFES</h4><p>Capacity-building de 12 meses no programa &ldquo;Universities for the World&rdquo;; desenho e lan&ccedil;amento de um <b>PhD em cotutela / dual award</b>. Precedente capixaba direto.</p></div></div>
+      <div class="ben"><div class="idx">&middot;</div><div><h4>Brunel University London &times; UERJ</h4><p>Parceria sob o HE Connects UK&ndash;Americas, com foco em rela&ccedil;&otilde;es estrat&eacute;gicas e <b>reconhecimento m&uacute;tuo de qualifica&ccedil;&otilde;es</b>.</p></div></div>
+      <div class="ben"><div class="idx">&middot;</div><div><h4>Programa Brasil&ndash;UK com a ABRUEM / USP</h4><p>O British Council Brasil declara querer &ldquo;parcerias estrat&eacute;gicas e consolidadas que v&atilde;o al&eacute;m da assinatura de um MoU&rdquo;, embutidas no curr&iacute;culo institucional. &Eacute; a r&eacute;gua de Sustainability.</p></div></div>
+    </div>
+  </section>
+
+  <!-- VERDICT -->
+  <section id="veredito">
+    <div class="shead"><span class="snum">&#9733;</span><h2>Veredito e pr&oacute;ximos passos</h2><a class="toplink" href="#mudancas">&uarr; topo</a></div>
+    <div class="verdict">
+      <h2>O veredito</h2>
+      <p>O Caminho 1 lidera com folga (88) &mdash; e, reposicionado como <b>framework de reconhecimento de uma microcredencial inclusiva que j&aacute; existe</b>, ele resolve de uma vez os tr&ecirc;s gates cr&iacute;ticos (n&atilde;o &eacute; pesquisa, n&atilde;o depende de IP, &eacute; co-autorado) e ataca o item de maior peso (marco regulat&oacute;rio). Os outros tr&ecirc;s caminhos rendem mais como pe&ccedil;as dele do que como propostas rivais.</p>
+      <div class="pieces">
+        <span class="pc"><b>Caminho 2</b> entra como a frente de dissemina&ccedil;&atilde;o e capacity building</span>
+        <span class="pc"><b>Caminho 3</b> entra como o pacote de sistema/pol&iacute;tica (e a evolu&ccedil;&atilde;o p&oacute;s-grant)</span>
+        <span class="pc"><b>Caminho 4</b> entra como a fase seguinte: a credencial conjunta, depois do reconhecimento mapeado</span>
+      </div>
+    </div>
+
+    <div class="alert">
+      <h3>O alerta de or&ccedil;amento</h3>
+      <p>S&atilde;o at&eacute; &pound;25.000 (cerca de R$ 172 mil). O formul&aacute;rio confirma tetos por categoria. Cinco pessoas qualificadas s&atilde;o uma for&ccedil;a, mas n&atilde;o cabe pagar tempo de todo mundo: defina cedo quem &eacute; financiado e quem contribui em esp&eacute;cie (in-kind), ou a nota de Value for Money sofre. Lembre que <b>PI, hardware, overheads e bolsas s&atilde;o inelegíveis</b>.</p>
+      <div class="caps">
+        <div class="cap"><div class="cn">30%</div><div class="cl">Pessoal: &pound;7.500 (~R$ 52 mil)</div></div>
+        <div class="cap"><div class="cn">20%</div><div class="cl">Expertise externa: &pound;5.000 (~R$ 34 mil)</div></div>
+        <div class="cap"><div class="cn">20%</div><div class="cl">Viagem: &pound;5.000 (~R$ 34 mil)</div></div>
+      </div>
+    </div>
+
+    <div class="fine">
+      <h3>A letra mi&uacute;da do contrato</h3>
+      <ul>
+        <li><b>O contrato &eacute; inegoci&aacute;vel.</b> Ao submeter, a OU concorda com os termos do Grant Agreement como est&atilde;o. Aprova&ccedil;&atilde;o interna (legal/finan&ccedil;as) deve ser obtida antes da submiss&atilde;o.</li>
+        <li><b>A OU recebe e repassa o recurso</b> ao CEFOR como parceiro, e &eacute; a respons&aacute;vel legal por toda a entrega e presta&ccedil;&atilde;o de contas.</li>
+        <li><b>Dois relat&oacute;rios obrigat&oacute;rios</b>, progresso em ago/2027 e final em jun/2028, sob risco de devolu&ccedil;&atilde;o de recursos se atrasarem.</li>
+        <li><b>Conformidade no lado da OU</b>, incluindo seguros, salvaguarda (safeguarding), prote&ccedil;&atilde;o de dados (UK GDPR + LGPD) e regras de marca do British Council. <b>ODA compliance</b> obrigat&oacute;ria (Brasil &eacute; pa&iacute;s ODA).</li>
+      </ul>
+    </div>
+
+    <div class="next">
+      <h3>Pr&oacute;ximos passos</h3>
+      <ol class="steps">
+        <li><b>Hoje:</b> e-mailar <b>goingglobalpartnerships-TNE@britishcouncil.org</b> com tr&ecirc;s perguntas (mesmo com a janela oficial fechada).</li>
+        <li><b>Confirmar internamente</b> o nome de registro da Vanessa para o CV e a microcredencial-&acirc;ncora com a Leigh-Anne (HZVM884/885 s&atilde;o as candidatas naturais).</li>
+        <li><b>Escrever o concept note do Caminho 1 reposicionado</b> &mdash; em ingl&ecirc;s, com resumo em PT-BR, pronto para circular entre Vanessa, Felipe e Leigh-Anne.</li>
+        <li><b>Travar a divis&atilde;o de trabalho e o or&ccedil;amento</b> dentro dos caps, com co-autoria expl&iacute;cita e governan&ccedil;a paritária.</li>
+      </ol>
+      <div class="qbox">
+        <div class="qh">As 3 perguntas ao British Council</div>
+        <ul>
+          <li>A Open University pode concorrer ao <b>slot reservado &agrave;s na&ccedil;&otilde;es devolvidas</b> em parceria com o Brasil?</li>
+          <li>O <b>OUVP</b> cobre a valida&ccedil;&atilde;o de microcredenciais (e n&atilde;o s&oacute; programas de grau)?</li>
+          <li>Confirmam o <b>IFES como Higher Education Provider</b> eleg&iacute;vel como Lead estrangeiro (equiparado a universidade federal pela Lei 11.892/2008)?</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot">
+      Documento de briefing interno &middot; CEFOR/IFES e Open University (IET) &middot; TNE Exploratory Grant 2026, British Council &middot; vers&atilde;o 4 (11 jun 2026).<br>
+      Pesos e crit&eacute;rios de avalia&ccedil;&atilde;o conforme o Call Guidance v2 oficial (se&ccedil;&atilde;o 15). As notas por crit&eacute;rio e os &iacute;ndices de aprova&ccedil;&atilde;o s&atilde;o estimativa pr&oacute;pria, para apoiar a decis&atilde;o. Perfis da equipe verificados por pesquisa de fontes p&uacute;blicas (p&aacute;ginas institucionais, ORCID, Google Scholar, Lattes/Escavador) e podem conter imprecis&otilde;es a confirmar com os pr&oacute;prios. Cen&aacute;rio regulat&oacute;rio brasileiro conforme MEC/CNE, CAPES e fontes oficiais. Convers&atilde;o a cerca de R$ 6,90 por libra (junho de 2026), apenas aproximada. Datas conforme o Call Guidance v2 e o Grant Agreement. Documenta&ccedil;&atilde;o estruturada completa na pasta <b>context/</b>.
+    </div>
+  </section>
+
+  </div>
+</body>
+</html>

@@ -24,6 +24,14 @@ Segundo cérebro do projeto **TNE Exploratory Grant 2026** — CEFOR/IFES + IET/
 
 Camadas de conhecimento (`/00`–`/30`, `/50`): framework Zettelkasten. Camada operacional (`/40`): ICM.
 
+## Material trazido do repo do Elton (a integrar)
+
+Merge de `vertumno/cefor-ou-british-council` trouxe material que ainda **não** segue a estrutura do vault — fica na raiz até ser absorvido pelas camadas:
+
+- `context/` — base de conhecimento sobre o edital (regras, parceiros, contexto regulatório BR, inteligência, estratégia). Candidato a alimentar `/10-literatura` e `/20-permanent-notes`.
+- `application/` — workspace de redação da candidatura (formulário 00–06, CVs, cartas de apoio, `_tracker/`). Candidato a convergir com `/40-operacional/41-bid/`.
+- PDFs oficiais do edital, briefings (`tne-briefing-v3/v4.html`), versão OU2 da candidatura (PT/EN) e `analise-proposta.html` na raiz.
+
 ## Fase ativa
 
 **Candidatura (`bid`).** Cutoff interno **27 jun 2026** · submissão pela OU **6 jul 2026**.

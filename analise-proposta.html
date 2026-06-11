@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Análise da Proposta — TNE Exploratory Grant 2026 · CEFOR/IFES × Open University</title>
+<meta name="description" content="Análise comparativa da proposta de candidatura conjunta CEFOR/IFES e Open University ao TNE Exploratory Grants 2026 do British Council.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --surface: #111827;
+    --surface-2: #1a2236;
+    --surface-3: #1f2a42;
+    --border: rgba(255,255,255,0.06);
+    --text: #e2e8f0;
+    --text-dim: #94a3b8;
+    --text-muted: #64748b;
+    --accent: #6366f1;
+    --accent-light: #818cf8;
+    --green: #10b981;
+    --green-bg: rgba(16,185,129,0.08);
+    --green-border: rgba(16,185,129,0.25);
+    --amber: #f59e0b;
+    --amber-bg: rgba(245,158,11,0.08);
+    --amber-border: rgba(245,158,11,0.25);
+    --red: #ef4444;
+    --red-bg: rgba(239,68,68,0.08);
+    --red-border: rgba(239,68,68,0.25);
+    --blue: #3b82f6;
+    --blue-bg: rgba(59,130,246,0.08);
+    --cyan: #22d3ee;
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---- NAV ---- */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,14,26,0.85);
+    backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid var(--border);
+    padding: 0 24px;
+  }
+  nav .nav-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; align-items: center; gap: 8px;
+    overflow-x: auto; scrollbar-width: none;
+    padding: 12px 0;
+  }
+  nav .nav-inner::-webkit-scrollbar { display: none; }
+  nav a {
+    color: var(--text-dim); text-decoration: none;
+    font-size: 13px; font-weight: 500;
+    padding: 6px 14px; border-radius: 8px;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  nav a:hover { color: var(--text); background: var(--surface-2); }
+  nav a.active { color: var(--accent-light); background: rgba(99,102,241,0.12); }
+
+  /* ---- HERO ---- */
+  .hero {
+    position: relative;
+    padding: 80px 24px 64px;
+    background: linear-gradient(165deg, #0f172a 0%, #1e1b4b 40%, #312e81 100%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 30% 20%, rgba(99,102,241,0.15), transparent),
+                radial-gradient(ellipse 60% 50% at 80% 80%, rgba(16,185,129,0.1), transparent);
+  }
+  .hero-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3);
+    color: var(--accent-light); font-size: 12px; font-weight: 600;
+    padding: 5px 14px; border-radius: 20px;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    margin-bottom: 20px;
+  }
+  .hero .badge::before { content: ''; width: 6px; height: 6px; background: var(--accent-light); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
+  .hero h1 {
+    font-size: clamp(28px,5vw,48px);
+    font-weight: 800; letter-spacing: -0.02em;
+    line-height: 1.15;
+    background: linear-gradient(135deg, #e2e8f0, #818cf8);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+  }
+  .hero p { font-size: 17px; color: var(--text-dim); max-width: 680px; }
+
+  .hero-stats {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr));
+    gap: 16px; margin-top: 40px;
+  }
+  .hero-stat {
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 20px;
+    text-align: center;
+  }
+  .hero-stat .val { font-size: 28px; font-weight: 800; color: var(--accent-light); }
+  .hero-stat .lbl { font-size: 12px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ---- CONTAINER ---- */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---- SECTION ---- */
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label {
+    font-size: 12px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--accent-light); margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: clamp(22px,3.5vw,32px); font-weight: 800;
+    letter-spacing: -0.015em; margin-bottom: 12px;
+  }
+  .section-desc { color: var(--text-dim); font-size: 15px; max-width: 700px; margin-bottom: 40px; }
+
+  /* ---- CARDS ---- */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  .card:hover { border-color: rgba(99,102,241,0.2); box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+  .card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+  .card p, .card li { font-size: 14.5px; color: var(--text-dim); line-height: 1.7; }
+  .card ul { padding-left: 20px; }
+  .card ul li { margin-bottom: 6px; }
+  .card ul li::marker { color: var(--accent-light); }
+
+  .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 20px; }
+
+  /* ---- SCORE GAUGE ---- */
+  .gauge-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 48px; }
+  .gauge-block { flex: 1; min-width: 220px; }
+  .gauge-ring {
+    width: 150px; height: 150px; margin: 0 auto 12px;
+    position: relative;
+  }
+  .gauge-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .gauge-ring circle { fill: none; stroke-width: 10; stroke-linecap: round; }
+  .gauge-ring .bg { stroke: var(--surface-3); }
+  .gauge-ring .fg { stroke: var(--accent-light); transition: stroke-dashoffset 1.2s ease; }
+  .gauge-ring .val {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: 36px; font-weight: 800; color: var(--accent-light);
+  }
+  .gauge-ring .val span { font-size: 12px; font-weight: 500; color: var(--text-muted); }
+  .gauge-label { text-align: center; font-size: 13px; font-weight: 600; color: var(--text-dim); }
+
+  /* ---- CRITERIA TABLE ---- */
+  .criteria-table {
+    width: 100%; border-collapse: separate; border-spacing: 0;
+    border-radius: var(--radius); overflow: hidden;
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+  }
+  .criteria-table th {
+    background: var(--surface-2); text-align: left;
+    padding: 14px 18px; font-size: 12px; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    color: var(--text-muted);
+  }
+  .criteria-table td {
+    padding: 14px 18px; font-size: 14px; color: var(--text-dim);
+    border-top: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .criteria-table tr:hover td { background: rgba(99,102,241,0.03); }
+  .criteria-table .score-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    padding: 3px 10px; border-radius: 6px;
+    font-size: 13px; font-weight: 700;
+  }
+  .score-high { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .score-med { background: var(--amber-bg); color: var(--amber); border: 1px solid var(--amber-border); }
+  .score-low { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+
+  /* ---- PROGRESS BAR ---- */
+  .bar-wrap { margin-bottom: 20px; }
+  .bar-header { display: flex; justify-content: space-between; margin-bottom: 6px; }
+  .bar-header .name { font-size: 13px; font-weight: 600; }
+  .bar-header .pct { font-size: 13px; font-weight: 700; color: var(--accent-light); }
+  .bar-track { height: 8px; background: var(--surface-3); border-radius: 4px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+
+  /* ---- CALLOUT ---- */
+  .callout {
+    border-radius: var(--radius-sm); padding: 20px 24px;
+    display: flex; gap: 14px; align-items: flex-start;
+    margin-bottom: 16px;
+  }
+  .callout .icon { font-size: 22px; flex-shrink: 0; line-height: 1; }
+  .callout.green { background: var(--green-bg); border: 1px solid var(--green-border); }
+  .callout.amber { background: var(--amber-bg); border: 1px solid var(--amber-border); }
+  .callout.red { background: var(--red-bg); border: 1px solid var(--red-border); }
+  .callout.blue { background: var(--blue-bg); border: 1px solid rgba(59,130,246,0.25); }
+  .callout strong { display: block; font-size: 14px; margin-bottom: 4px; }
+  .callout p { font-size: 13.5px; color: var(--text-dim); }
+
+  /* ---- TIMELINE ---- */
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 11px; top: 4px; bottom: 4px;
+    width: 2px; background: linear-gradient(to bottom, var(--accent), var(--green));
+    border-radius: 1px;
+  }
+  .tl-item { position: relative; margin-bottom: 28px; }
+  .tl-item::before {
+    content: ''; position: absolute; left: -32px; top: 6px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--accent); border: 3px solid var(--bg);
+    box-shadow: 0 0 0 2px var(--accent);
+  }
+  .tl-item .tl-period { font-size: 12px; font-weight: 700; color: var(--accent-light); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
+  .tl-item h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .tl-item p { font-size: 13.5px; color: var(--text-dim); }
+
+  /* ---- TAG ---- */
+  .tag {
+    display: inline-block; padding: 3px 10px; border-radius: 6px;
+    font-size: 11px; font-weight: 600;
+    background: rgba(99,102,241,0.12); color: var(--accent-light);
+    margin-right: 4px; margin-bottom: 4px;
+  }
+
+  /* ---- FOOTER ---- */
+  footer {
+    padding: 40px 24px; text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted); font-size: 12px;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 640px) {
+    .hero { padding: 48px 16px 40px; }
+    section { padding: 48px 0; }
+    .container { padding: 0 16px; }
+    .card { padding: 20px; }
+    .criteria-table { font-size: 12px; }
+    .criteria-table td, .criteria-table th { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#resumo" class="active">Resumo</a>
+    <a href="#avaliacao">Avaliação</a>
+    <a href="#pontos-fortes">Potencial</a>
+    <a href="#melhorias">Melhorias</a>
+    <a href="#riscos">Riscos</a>
+    <a href="#trabalho">Plano de Trabalho</a>
+    <a href="#veredito">Veredito</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="badge">Análise Estratégica · Uso Interno</div>
+    <h1>TNE Exploratory Grant 2026<br>CEFOR/IFES × Open University</h1>
+    <p>Análise comparativa completa da proposta de candidatura, cruzando cada seção com os critérios oficiais de avaliação do British Council, pontos de melhoria e potencial de aprovação.</p>
+
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="val">£25k</div><div class="lbl">Valor Máximo</div></div>
+      <div class="hero-stat"><div class="val">17</div><div class="lbl">Meses de Duração</div></div>
+      <div class="hero-stat"><div class="val">~2</div><div class="lbl">Vagas Brasil</div></div>
+      <div class="hero-stat"><div class="val">88<span>/100</span></div><div class="lbl">Índice Estimado</div></div>
+      <div class="hero-stat"><div class="val" style="color:var(--green)">ALTA</div><div class="lbl">Chance de Aprovação</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- RESUMO -->
+<section id="resumo">
+<div class="container">
+  <div class="section-label">Seção 01</div>
+  <div class="section-title">Resumo Executivo da Proposta</div>
+  <div class="section-desc">Visão geral do que a proposta contém, o que propõe fazer e quem são os atores.</div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>🎯 O que é</h3>
+      <p>Uma candidatura conjunta entre o <strong>CEFOR/IFES</strong> (Brasil) e o <strong>Institute of Educational Technology (IET)</strong> da <strong>Open University</strong> (Reino Unido) ao programa <em>TNE Exploratory Grants 2026</em> do <strong>British Council</strong>.</p>
+      <p style="margin-top:12px">O título proposto é: <strong>"Da Expertise Regional ao Aprendizado Global: Explorando Oportunidades de Educação a Distância e Transnacional entre a The Open University e o Ifes"</strong>.</p>
+    </div>
+    <div class="card">
+      <h3>🧭 Propósito Central</h3>
+      <p>Explorar como a expertise regional especializada da rede multicampi do Ifes pode ser expandida por meio de educação a distância inclusiva e de alta qualidade, em parceria com a OU. O projeto visa identificar oportunidades para ampliar o acesso a saberes locais, fortalecer a capacidade institucional e criar um roteiro para futuras iniciativas de educação online e transnacional.</p>
+    </div>
+    <div class="card">
+      <h3>📋 Os 4 Objetivos</h3>
+      <ul>
+        <li>Intercambiar expertise sobre EAD, QA, suporte ao estudante, acessibilidade e práticas digitais.</li>
+        <li>Identificar áreas de expertise regional do Ifes com potencial para oferta online mais ampla e futura TNE.</li>
+        <li>Fortalecer capacidade institucional via workshops conjuntos, visitas e planejamento colaborativo.</li>
+        <li>Co-desenvolver um modelo prático e roteiro estratégico para futuras iniciativas de educação online e transnacional.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>👥 Quem Participa</h3>
+      <ul>
+        <li><strong>Lead UK:</strong> The Open University (IET) — submissão, contrato, recebimento do grant.</li>
+        <li><strong>Lead BR:</strong> CEFOR/IFES — parceiro contratado, co-design e execução no Brasil.</li>
+        <li><strong>Pessoas-chave:</strong> Leigh-Anne Perryman (OU), Vanessa Battestin (CEFOR), Felipe Tessarolo (OU).</li>
+      </ul>
+    </div>
+  </div>
+
+  <div style="margin-top:32px">
+    <div class="card">
+      <h3>📌 O que a proposta prevê entregar</h3>
+      <div class="grid-3" style="margin-top:16px">
+        <div>
+          <div class="tag">Atividade 1</div>
+          <p style="margin-top:8px"><strong>Visita institucional</strong> — 5 dias de representantes do Ifes à OU para imersão em EAD (Primavera 2027).</p>
+        </div>
+        <div>
+          <div class="tag">Atividade 2</div>
+          <p style="margin-top:8px"><strong>Workshops presenciais conjuntos</strong> — sobre design de EAD, QA, acessibilidade e suporte ao estudante (Primavera–Verão 2027).</p>
+        </div>
+        <div>
+          <div class="tag">Atividade 3</div>
+          <p style="margin-top:8px"><strong>Workshops online</strong> — Série sobre EAD inclusiva, expertise regional e sustentabilidade (2027–2028).</p>
+        </div>
+        <div>
+          <div class="tag">Atividade 4</div>
+          <p style="margin-top:8px"><strong>Comunidade de Prática</strong> — OU–Ifes, conectando as equipes para intercâmbio contínuo ao longo do projeto.</p>
+        </div>
+        <div>
+          <div class="tag">Atividade 5</div>
+          <p style="margin-top:8px"><strong>Pesquisa colaborativa</strong> — Mapeamento de expertise regional em campi selecionados do Ifes e análise de oportunidades futuras.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- AVALIAÇÃO -->
+<section id="avaliacao">
+<div class="container">
+  <div class="section-label">Seção 02</div>
+  <div class="section-title">Avaliação Critério a Critério</div>
+  <div class="section-desc">Cada critério do British Council é pontuado de 0 a 20 e ponderado pelo peso oficial. O total máximo é 100%.</div>
+
+  <div class="gauge-row">
+    <div class="gauge-block">
+      <div class="gauge-ring">
+        <svg viewBox="0 0 160 160">
+          <circle class="bg" cx="80" cy="80" r="68"/>
+          <circle class="fg" cx="80" cy="80" r="68"
+            stroke-dasharray="427.26"
+            stroke-dashoffset="51.27" />
+        </svg>
+        <div class="val">88<span>/100</span></div>
+      </div>
+      <div class="gauge-label">Índice Composto Estimado</div>
+    </div>
+    <div class="gauge-block" style="flex:2; min-width:320px">
+      <div class="bar-wrap">
+        <div class="bar-header"><span class="name">Quality & Relevance (35%)</span><span class="pct">92/100</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:92%;background:linear-gradient(90deg,var(--accent),var(--green))"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-header"><span class="name">Methodology & Design (30%)</span><span class="pct">86/100</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:86%;background:linear-gradient(90deg,var(--accent),var(--cyan))"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-header"><span class="name">Sustainability (25%)</span><span class="pct">88/100</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%;background:linear-gradient(90deg,var(--green),var(--cyan))"></div></div>
+      </div>
+      <div class="bar-wrap">
+        <div class="bar-header"><span class="name">Resources & Value for Money (10%)</span><span class="pct">80/100</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:80%;background:linear-gradient(90deg,var(--amber),var(--green))"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <table class="criteria-table">
+    <thead>
+      <tr><th>Critério (Peso)</th><th>O que o Avaliador Busca</th><th>Aderência da Proposta</th><th>Nota</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Quality & Relevance</strong><br>(35%)</td>
+        <td>Alinhamento com marco regulatório de TNE do país parceiro; benefício mútuo; co-design paritário; remoção de barreiras.</td>
+        <td>Proposta menciona o MEC e ambiente regulatório brasileiro. ODS bem mapeados (4, 5, 10, 13, 14). Co-design presente. Ações 2 e 4 da TNE Strategy selecionadas. Impacto em 3 níveis (institucional, estudante, sistema).</td>
+        <td><span class="score-pill score-high">92</span></td>
+      </tr>
+      <tr>
+        <td><strong>Methodology & Design</strong><br>(30%)</td>
+        <td>Atividades viáveis e bem planejadas; outputs tangíveis; framework de M&A com indicadores; cronograma realista; riscos e mitigações.</td>
+        <td>5 atividades bem detalhadas com indicadores e meios de verificação. Tangíveis definidos para cada atividade. Falta maior detalhamento de riscos e mitigações específicas no formulário.</td>
+        <td><span class="score-pill score-high">86</span></td>
+      </tr>
+      <tr>
+        <td><strong>Sustainability</strong><br>(25%)</td>
+        <td>TNE escalável pós-piloto; post-grant pathways; disseminação; embedding; autonomia de longo prazo do parceiro.</td>
+        <td>Menção a futuras colaborações, MoU, Comunidade de Prática contínua. Potencial de disseminação via rede do Ifes (38 campi). Poderia ser mais explícito sobre o caminho pós-grant concreto.</td>
+        <td><span class="score-pill score-high">88</span></td>
+      </tr>
+      <tr>
+        <td><strong>Resources & VfM</strong><br>(10%)</td>
+        <td>Custos justificáveis nos caps; distribuição equitativa; co-autoria; oportunidades para grupos sub-representados.</td>
+        <td>Tabelas de orçamento presentes mas vazias no rascunho. Equilíbrio UK–BR precisa ser evidenciado. Caps de 30/20/20% devem ser respeitados.</td>
+        <td><span class="score-pill score-med">80</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout blue">
+    <div class="icon">📊</div>
+    <div>
+      <strong>Gates Fora da Pontuação (Eliminatórios)</strong>
+      <p><strong>Gender Equality Statement:</strong> presente na proposta mas precisa de dados/evidências específicos do contexto brasileiro e foco demonstrável em mulheres. O MOOC premiado do CEFOR (CBIE 2024) é um ativo valioso ainda não explorado no formulário atual.</p>
+      <p style="margin-top:6px"><strong>Ética e Ambiente:</strong> seções presentes, mas não pontuam na avaliação.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PONTOS FORTES -->
+<section id="pontos-fortes">
+<div class="container">
+  <div class="section-label">Seção 03</div>
+  <div class="section-title">Por Que Tem Grande Potencial de Aprovação</div>
+  <div class="section-desc">Análise dos elementos que fazem esta proposta se destacar no pool competitivo do Brasil.</div>
+
+  <div class="grid-2">
+    <div class="callout green" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">🏛️</div>
+        <strong style="color:var(--green)">Nicho que os "Gigantes" Não Ocupam</strong>
+      </div>
+      <p>USP e Unicamp (coordenadoras do Global.edu) competem no eixo de pesquisa e pós-graduação stricto sensu. O CEFOR/IFES ocupa um nicho totalmente distinto: <strong>formação docente em escala + MOOC + inclusão + TNE para a Rede Federal</strong>. Essa diferenciação é poderosa porque o edital premia justamente impacto sistêmico sobre barreiras, e não pesquisa.</p>
+    </div>
+    <div class="callout green" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">🤝</div>
+        <strong style="color:var(--green)">Parceria Naturalmente Complementar</strong>
+      </div>
+      <p>A Open University é a referência mundial em EAD e a líder do IET. O CEFOR/IFES é o centro de referência em EAD da maior rede federal do Brasil (38 campi). A complementaridade é genuína e documentável, atendendo o critério de <strong>co-design paritário</strong> (Quality 35% + Resources 10%).</p>
+    </div>
+    <div class="callout green" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">🌍</div>
+        <strong style="color:var(--green)">Alinhamento ODS Excepcional</strong>
+      </div>
+      <p>A proposta mapeia 5 ODS (4, 5, 10, 13, 14) com justificativas claras. A educação a distância como vetor de inclusão é uma narrativa que o British Council valoriza profundamente, especialmente o eixo de <strong>redução de desigualdades</strong> e <strong>igualdade de gênero</strong>.</p>
+    </div>
+    <div class="callout green" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">📐</div>
+        <strong style="color:var(--green)">Ineditismo no Cenário Brasil–UK</strong>
+      </div>
+      <p>Não foi encontrado nenhum case study GGP-Brasil <strong>nomeado de microcredenciais ou reconhecimento mútuo de credenciais</strong>. Isso posiciona a proposta como pioneira — algo que avaliadores valorizam quando o tema está no discurso estratégico do British Council.</p>
+    </div>
+    <div class="callout green" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">📈</div>
+        <strong style="color:var(--green)">Escalabilidade via Rede Federal</strong>
+      </div>
+      <p>O IFES faz parte da maior rede de educação profissional e tecnológica do Brasil. Qualquer framework ou metodologia co-desenvolvida pode ser replicada em <strong>38 campi do Ifes</strong> e disseminada via <strong>CONIF/CONCEFOR</strong> para toda a rede federal — impacto de sistema altíssimo.</p>
+    </div>
+    <div class="callout green" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">🏆</div>
+        <strong style="color:var(--green)">Precedente Capixaba</strong>
+      </div>
+      <p>O caso <strong>Coventry University × UFES</strong> (capacity-building, PhD em cotutela) mostra que o Espírito Santo já figurou em projetos GGP anteriores. Isso valida a viabilidade regional e demonstra uma "comunidade de prática" local de internacionalização.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- MELHORIAS -->
+<section id="melhorias">
+<div class="container">
+  <div class="section-label">Seção 04</div>
+  <div class="section-title">Sugestões de Melhoria Estratégica</div>
+  <div class="section-desc">Onde a proposta atual pode ser aprimorada para maximizar a pontuação nos critérios oficiais e evitar armadilhas de eliminação.</div>
+
+  <div class="callout amber" style="flex-direction:column">
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="icon">⚠️</div>
+      <strong style="color:var(--amber)">CRÍTICA — Reposicionar de "Exploração Genérica" para "Framework de Reconhecimento"</strong>
+    </div>
+    <p>A proposta atual lê como <em>"conhecer práticas de EAD da OU"</em>. O edital premia <strong>remoção de barreiras ao TNE</strong>. Reposicionar toda a narrativa para: <em>"co-desenhar um framework de equivalência de crédito entre uma microcredencial da OU (FHEQ Nível 7) e a certificação MOOC do IFES, mapeando barreiras regulatórias brasileiras"</em>. Isso ataca diretamente os 35% de Quality.</p>
+  </div>
+
+  <div class="grid-2" style="margin-top:8px">
+    <div class="callout amber" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">⚠️</div>
+        <strong style="color:var(--amber)">Evitar Linguagem de "Pesquisa"</strong>
+      </div>
+      <p>Substituir termos como "pesquisa colaborativa", "mapeamento e análise" por <strong>"co-design de framework", "workshops de co-criação", "sprint de parceria"</strong>. O edital exclui explicitamente pesquisa: <em>"TNE Grants do not fund research studies."</em></p>
+    </div>
+    <div class="callout amber" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">⚠️</div>
+        <strong style="color:var(--amber)">Gender Statement com Dados Reais</strong>
+      </div>
+      <p>O gate de gênero é <strong>eliminatório</strong>. Incluir dados do INEP sobre participação feminina na Rede Federal, destacar o <strong>MOOC premiado de inclusão (CBIE 2024)</strong> e direcionar o piloto explicitamente a <strong>professoras</strong> da Rede Federal, com indicadores desagregados por gênero.</p>
+    </div>
+    <div class="callout amber" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">⚠️</div>
+        <strong style="color:var(--amber)">Post-Grant Pathway Mais Concreto</strong>
+      </div>
+      <p>Nomear explicitamente: (1) MoU entre OU e IFES; (2) disseminação via CONCEFOR/CONIF; (3) trilha rumo a edital maior (Going Global Implementation Grant); (4) integração com o MA Online Teaching da OU. Atualmente, a seção de sustentabilidade fica vaga.</p>
+    </div>
+    <div class="callout amber" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">⚠️</div>
+        <strong style="color:var(--amber)">Ancorar numa Microcredencial Existente</strong>
+      </div>
+      <p>Em vez de propor "explorar oportunidades", ancorar a proposta numa <strong>microcredencial que já existe</strong> na OU (ex: HZVM884 ou HZVM885 da Leigh-Anne Perryman). Isso evita os gates de pesquisa, PI e orçamento — e demonstra viabilidade concreta.</p>
+    </div>
+    <div class="callout amber" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">⚠️</div>
+        <strong style="color:var(--amber)">Co-Autoria Intelectual Visível</strong>
+      </div>
+      <p>A proposta pode parecer OU-led com IFES como "campo de testes". Evidenciar: <strong>ADDIEM</strong> (metodologia da Vanessa) co-aplicado ao design; comitê diretor paritário; co-autoria do framework de reconhecimento; papéis com contribuição intelectual visível dos dois lados.</p>
+    </div>
+    <div class="callout amber" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">⚠️</div>
+        <strong style="color:var(--amber)">Seção de Riscos e Mitigações</strong>
+      </div>
+      <p>A Methodology (30%) exige riscos e mitigações claros. Incluir: risco de barreiras regulatórias sem resolução no prazo (mitigação: foco em mapeamento, não aprovação); risco de timeline curta (mitigação: workshops híbridos); risco de assimetria de parceria (mitigação: comitê paritário).</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- RISCOS -->
+<section id="riscos">
+<div class="container">
+  <div class="section-label">Seção 05</div>
+  <div class="section-title">Riscos e Pontos Cegos</div>
+  <div class="section-desc">Fatores que podem impactar negativamente a avaliação se não forem abordados.</div>
+
+  <div class="callout red" style="flex-direction:column">
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="icon">🚨</div>
+      <strong style="color:var(--red)">R1 — "Não financiamos pesquisa" + atividade chamada "Pesquisa Colaborativa"</strong>
+    </div>
+    <p>A Atividade 5 é literalmente chamada de "Pesquisa Colaborativa" (Collaborative Research). Esse é um <strong>gate de eliminação</strong>. Deve ser renomeada para algo como "Mapeamento Conjunto de Oportunidades" ou "Sprint de Co-Design do Framework".</p>
+  </div>
+
+  <div class="grid-2" style="margin-top:8px">
+    <div class="callout red" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">🚨</div>
+        <strong style="color:var(--red)">R2 — Competição Acirrada</strong>
+      </div>
+      <p>O Brasil tem apenas <strong>~2 vagas</strong> no pool geral. USP, Unicamp e outras instituições com histórico de internacionalização também competem. A diferenciação no nicho de <em>TNE para formação docente + inclusão</em> é essencial.</p>
+    </div>
+    <div class="callout red" style="flex-direction:column">
+      <div style="display:flex;gap:12px;align-items:center">
+        <div class="icon">🚨</div>
+        <strong style="color:var(--red)">R3 — Custos de PI são Inelegíveis</strong>
+      </div>
+      <p>Qualquer custo relacionado a propriedade intelectual, patentes, direitos autorais ou licenciamento é <strong>proibido</strong>. A proposta de reconhecimento de credencial pode arrastar custos de marca/licença — manter estritamente como "exploração de framework", não aquisição.</p>
+    </div>
+  </div>
+
+  <div class="callout amber" style="flex-direction:column; margin-top:8px">
+    <div style="display:flex;gap:12px;align-items:center">
+      <div class="icon">⚡</div>
+      <strong style="color:var(--amber)">Oportunidade — Slot das Nações Devolvidas</strong>
+    </div>
+    <p>Existem <strong>3 grants extras</strong> para nações devolvidas (Gales/Escócia/Irlanda do Norte) — pool muito menos disputado. A OU opera no Reino Unido todo (registro escocês, financiamento HEFCW/SFC). <strong>Vale consultar o British Council</strong> se pode concorrer a esses slots em parceria com o Brasil — isso poderia triplicar a chance.</p>
+  </div>
+</div>
+</section>
+
+<!-- PLANO DE TRABALHO -->
+<section id="trabalho">
+<div class="container">
+  <div class="section-label">Seção 06</div>
+  <div class="section-title">Plano de Trabalho — Se Aprovado</div>
+  <div class="section-desc">Como os 17 meses de projeto seriam estruturados (Jan 2027 → Jun 2028).</div>
+
+  <div class="grid-2">
+    <div>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-period">Meses 1–2 · Jan–Fev 2027</div>
+          <h4>Governança Paritária</h4>
+          <p>Comitê diretor conjunto estabelecido, papéis definidos, plano de trabalho detalhado, acordo de cooperação formalizado.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">Meses 2–6 · Fev–Jun 2027</div>
+          <h4>Mapeamento & Imersão</h4>
+          <p>Visita de 5 dias do Ifes à OU. Mapeamento de barreiras regulatórias brasileiras ao reconhecimento de microcredenciais. Análise de equivalência via OUVP/RPL.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">Meses 4–10 · Abr–Out 2027</div>
+          <h4>Co-Design do Framework</h4>
+          <p>Workshops conjuntos presenciais e online. Sprints de co-adaptação da microcredencial (ADDIEM + learning design IET). Acessibilidade embutida (WCAG, VLibras).</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">Meses 9–14 · Set 2027–Fev 2028</div>
+          <h4>Piloto Inclusivo</h4>
+          <p>Coorte de professoras da Rede Federal testando o framework co-adaptado. Métricas de alcance, inclusão e satisfação desagregadas por gênero.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-period">Meses 14–17 · Fev–Jun 2028</div>
+          <h4>Consolidação & Disseminação</h4>
+          <p>MoU assinado. Disseminação via CONCEFOR/CONIF. Roteiro para edital maior. Relatório final ao British Council.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="card" style="margin-bottom:20px">
+        <h3>📦 Entregáveis Tangíveis</h3>
+        <ul>
+          <li>Mapa de barreiras regulatórias brasileiras ao reconhecimento de microcredenciais estrangeiras</li>
+          <li>Framework de equivalência de crédito OU–IFES (blueprint documentado)</li>
+          <li>Microcredencial co-adaptada com acessibilidade embutida</li>
+          <li>Relatório do piloto com indicadores desagregados por gênero</li>
+          <li>MoU para continuidade da parceria</li>
+          <li>Roteiro de escalabilidade via rede federal</li>
+          <li>Comunidade de Prática ativa conectando as equipes</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-bottom:20px">
+        <h3>📐 Tipo de Trabalho a Realizar</h3>
+        <p style="margin-bottom:12px">O trabalho <strong>não é pesquisa acadêmica</strong> nem produção de curso. É:</p>
+        <ul>
+          <li><strong>Co-design de framework</strong> — criar um modelo de reconhecimento mútuo de credenciais</li>
+          <li><strong>Capacity building</strong> — capacitar as equipes para operar futura TNE</li>
+          <li><strong>Mapeamento regulatório</strong> — entender e documentar barreiras do MEC/CNE</li>
+          <li><strong>Piloto exploratório</strong> — testar o framework com uma coorte pequena</li>
+          <li><strong>Networking institucional</strong> — construir as pontes para parcerias de longo prazo</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>💰 Estrutura Orçamentária (Caps)</h3>
+        <table style="width:100%;font-size:13px;margin-top:8px;border-collapse:collapse">
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:8px 0">Pessoal (staff)</td>
+            <td style="text-align:right;font-weight:700">max 30% · £7.500</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:8px 0">Expertise / Consultoria</td>
+            <td style="text-align:right;font-weight:700">max 20% · £5.000</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:8px 0">Viagem Internacional</td>
+            <td style="text-align:right;font-weight:700">max 20% · £5.000</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0">Operacional + Marketing</td>
+            <td style="text-align:right;font-weight:700">restante · ~£7.500</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- VEREDITO -->
+<section id="veredito" style="padding-bottom:80px">
+<div class="container">
+  <div class="section-label">Seção 07</div>
+  <div class="section-title">Veredito Final</div>
+
+  <div class="card" style="background:linear-gradient(135deg,rgba(16,185,129,0.08),rgba(99,102,241,0.08));border-color:rgba(16,185,129,0.2)">
+    <div style="display:flex;gap:16px;align-items:center;margin-bottom:20px">
+      <div style="font-size:48px">✅</div>
+      <div>
+        <h3 style="font-size:24px;color:var(--green)">Proposta com Alto Potencial de Aprovação</h3>
+        <p style="color:var(--text-dim);font-size:14px">Índice estimado: 88/100 · Classificação: Forte</p>
+      </div>
+    </div>
+
+    <p style="margin-bottom:20px">A proposta possui <strong>fundamentos sólidos</strong>: parceria genuinamente complementar, alinhamento forte com ODS e TNE Strategy, nicho diferenciado da concorrência, e potencial de impacto sistêmico via rede federal.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div>
+        <h3 style="font-size:15px;color:var(--green);margin-bottom:10px">✅ O Que Já Funciona</h3>
+        <ul style="font-size:13.5px">
+          <li>Parceria OU + CEFOR/IFES genuinamente complementar</li>
+          <li>5 atividades detalhadas com indicadores</li>
+          <li>Alinhamento forte com ODS e TNE Strategy</li>
+          <li>Impacto em 3 níveis (institucional, estudante, sistema)</li>
+          <li>Contexto regulatório brasileiro mencionado</li>
+          <li>Escalabilidade via rede de 38 campi</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:15px;color:var(--amber);margin-bottom:10px">⚡ O Que Fazer para Maximizar</h3>
+        <ul style="font-size:13.5px">
+          <li>Reposicionar para "framework de reconhecimento" em vez de "exploração"</li>
+          <li>Eliminar termos de "pesquisa" de todas as atividades</li>
+          <li>Ancorar numa microcredencial existente da OU</li>
+          <li>Preencher Gender Statement com dados e foco em professoras</li>
+          <li>Nomear post-grant pathways concretos</li>
+          <li>Garantir co-autoria intelectual visível do CEFOR</li>
+          <li>Investigar slot das nações devolvidas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:32px;text-align:center;padding:24px;border-radius:var(--radius-sm);background:var(--surface-2)">
+    <p style="font-size:14px;color:var(--text-dim)">
+      <strong style="color:var(--text)">Regra de ouro:</strong> Todo texto deve soar como <em>"exploração e co-design de parceria e de framework de reconhecimento"</em> — nunca como "pesquisa" nem "produção do MOOC". Sem PI/licença no orçamento. Co-autoria visível dos dois lados.
+    </p>
+  </div>
+</div>
+</section>
+
+<footer>
+  <p>Documento de uso interno · CEFOR/IFES × Open University · Gerado em Junho 2026</p>
+  <p style="margin-top:4px">Os índices e notas são estimativas de apoio à decisão, não números oficiais do British Council.</p>
+</footer>
+
+<script>
+  // Active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
