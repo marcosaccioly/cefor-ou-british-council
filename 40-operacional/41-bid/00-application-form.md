@@ -12,25 +12,26 @@ Esqueleto de **todos os campos** do Sample Application Form, com limites de pala
 ## A. Identidade e objetivos do projeto
 
 **A1. Title** *(≤ 25 palavras)*
-> _Draft:_ "Recognising Inclusive Online Teaching: a UK–Brazil micro-credential credit-recognition framework between The Open University and IFES/CEFOR."
-> _(refinar — ver `01-concept-note.md`)_
+> ⚠️ _Draft SUPERADO_ (era "micro-credential credit-recognition framework"). Com o pivô (A6, microcredencial fora), o título precisa refletir **parceria + mapeamento + roadmap de EaD/TNE**. A refazer com o time — ver `01-concept-note.md`.
 
 **A2. Purpose / summary** *(≤ 75 palavras)*
-> _Draft em `01-concept-note.md` §Purpose._
+> ⚠️ _Draft a revisar_ — alinhar com a nova direção (Vanessa). Ver `01-concept-note.md` §Purpose.
 
-**A3. Objectives** *(1 a 5; ≤ 120 palavras — confirmar se é total ou por objetivo)*
-> 1. Map the Brazilian regulatory barriers to recognising UK micro-credentials.
-> 2. Co-design a credit-equivalence/recognition framework (OU FHEQ L7 ↔ IFES certification).
-> 3. Co-adapt an existing OU inclusive-teaching micro-credential to the Brazilian context.
-> 4. Pilot it with women educators in the Rede Federal.
-> 5. Establish governance + a post-grant pathway (MoU, scale via CONIF/CONCEFOR).
+**A3. Objectives** *(1 a 5; ≤ 120 palavras — confirmar se é total ou por objetivo)* — **direção Vanessa (canônica)**
+> 1. **Exchange expertise** between The Open University/IET and Ifes/CEFOR on topics such as distance-learning design, quality assurance, learner support, accessibility, digital education practices, AI in education, micro-credentials, learning analytics, and personalized and adaptive learning.
+> 2. **Identify regionally specialised areas of expertise** across selected Ifes campuses — including sustainability, environmental education, and culturally diverse communities — with potential for wider online delivery and future transnational education opportunities.
+> 3. **Strengthen institutional capacity** for online and transnational education through joint workshops, visits, and collaborative planning activities.
+> 4. **Co-develop a practical framework and strategic roadmap** to support future online and transnational education initiatives between the partner institutions, embedding principles of inclusion, equity, and sustainability.
+> _(Antigo obj "Develop recommendations…" removido — redundante com 2 e 4. Atividades destrinchadas em `04-activities-monitoring/activities-and-mande.md`.)_
 
 **A4. SDGs + justificativa**
-> Primários: **SDG 4** (educação de qualidade), **SDG 5** (igualdade de gênero — foco em professoras), **SDG 10** (redução de desigualdades). Justificar cada um em 1–2 frases. (Leigh-Anne pesquisa SDG 5/13 — alinhamento natural.)
+> Primários: **SDG 4** (educação de qualidade), **SDG 5** (igualdade de gênero — foco em mulheres/meninas), **SDG 10** (redução de desigualdades). Com o pivô puxado pela Leigh-Anne, **SDG 13** (ação climática) e o eixo de sustentabilidade ganham peso. Justificar cada um em 1–2 frases.
 
 ---
 
 ## B. Núcleo de TNE e reconhecimento *(CEFOR lidera)*
+
+> ⚠️ **Seção a repensar (A10).** Toda a seção B abaixo foi escrita ancorada na **microcredencial + reconhecimento de crédito** — direção **superada** pelo pivô. Como este é o núcleo de maior peso (~35%, Quality & Relevance), o time precisa **redefinir qual é o núcleo de TNE** que sustenta o critério agora: o ângulo passa a ser "parceria + mapeamento de expertises + roadmap de TNE futura" (mais brando para um edital *TNE Exploratory*). Conteúdo antigo mantido abaixo como referência até a redefinição.
 
 **B1. TNE Strategy Actions selecionadas**
 > Principal: **Action 3** (informar política + reconhecimento de graus UK). Secundárias: **Action 2** (QA/co-criação), **Action 4** (capacity building inclusivo de docentes). Ver `../context/grant/tne-strategy.md`.
