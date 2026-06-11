@@ -71,8 +71,8 @@ Esqueleto de **todos os campos** do Sample Application Form, com limites de pala
 ## G. Documentos de apoio *(checklist em `_tracker/submission-checklist.md`)*
 - [ ] Carta de apoio IFES (reitoria/pró-reitoria — **não** a Vanessa) → `assets/support-letter-ifes.md`
 - [ ] Carta de apoio OU (Head/sênior — **não** a Leigh-Anne) → `assets/support-letter-ou.md`
-- [ ] CV Vanessa ≤3 pág → `assets/cv-battestin.md`
-- [ ] CV Leigh-Anne ≤3 pág → `assets/cv-perryman.md`
+- [ ] CV Vanessa **≤2 pág** (formulário OU2; sem fotos/logos, fonte padrão) → `08-supporting-docs/cv-battestin.md`
+- [ ] CV Leigh-Anne **≤2 pág** → `08-supporting-docs/cv-perryman.md`
 - [ ] Orçamento na seção própria do formulário
 
 ---

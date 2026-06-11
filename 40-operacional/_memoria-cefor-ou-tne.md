@@ -22,6 +22,7 @@ Cronológica reversa. Primeiro doc a abrir ao retomar. Cada entrada referencia a
 - Divergência: objetivo 1 no OU2 está mais curto que no email da Vanessa (canônico = email). Atualizar no formulário.
 - Drafts superados sinalizados com banner: `concept-note`, `gender-edi` (→A11, GATE), `sustainability-pathway`, `risks`.
 - Resolver com o time: A10 (núcleo de TNE), **A11 (mecanismo de gênero pós-pivô — GATE)**, A12 (Activity Type/agrupamento da Atividade 3).
+- **Prévia + insights gerados:** `41-bid/_previa-formulario-2026-06-11.md` (estado campo a campo, caminho crítico até 27/jun) e `41-bid/_insights-e-questoes-2026-06-11.md` (Q1–Q9 para Felipe/Vanessa; I1–I7 para o time). Achados novos: governança e EDI **vazios** no OU2; declaração de **uso de IA** (responder Yes); **CV máx 2 pág** (drafts assumiam 3 — corrigido); resquício "Blueprint for a CPD/Microcredential" a limpar no OU2; janela de perguntas ao BC possivelmente encerrada (conferir antes de contar com o slot devolvido).
 
 ---
 
