@@ -1,6 +1,8 @@
 ---
 id: proposal-open-questions
 title: Perguntas em aberto e próximos passos
+author: elton
+imported: 2026-06-11  # vindo do repo do Elton; itens a migrar para _pontos-a-definir-cefor-ou-tne.md
 domain: proposal
 status: verified
 confidence: high

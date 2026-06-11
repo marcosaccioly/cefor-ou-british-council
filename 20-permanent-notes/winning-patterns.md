@@ -1,6 +1,8 @@
 ---
 id: intelligence-winning-patterns
 title: Padrões de projetos vencedores do Going Global Partnerships
+author: elton
+imported: 2026-06-11  # vindo do repo do Elton; a revisar/dar voz própria antes de citar como Permanent Note
 domain: intelligence
 status: partial
 confidence: medium

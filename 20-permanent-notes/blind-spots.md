@@ -1,6 +1,8 @@
 ---
 id: intelligence-blind-spots
 title: Pontos cegos, riscos e oportunidades negligenciadas
+author: elton
+imported: 2026-06-11  # vindo do repo do Elton; a revisar/dar voz própria antes de citar como Permanent Note
 domain: intelligence
 status: verified
 confidence: high

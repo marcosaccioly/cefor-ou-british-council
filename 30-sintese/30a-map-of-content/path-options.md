@@ -1,6 +1,8 @@
 ---
 id: proposal-path-options
 title: Os quatro caminhos — comparação e notas
+author: elton
+imported: 2026-06-11  # vindo do repo do Elton; co-autoria do time a consolidar no MOC
 domain: proposal
 status: verified
 confidence: medium

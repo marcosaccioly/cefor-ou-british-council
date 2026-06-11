@@ -1,6 +1,8 @@
 ---
 id: proposal-recommended-direction
 title: Direção recomendada — Caminho 1 reposicionado
+author: elton
+imported: 2026-06-11  # vindo do repo do Elton; co-autoria do time a consolidar no MOC
 domain: proposal
 status: verified
 confidence: high
