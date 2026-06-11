@@ -17,6 +17,8 @@ Legenda: 🔴 aberto · 🟡 em andamento · 🟢 resolvido
 | A5 | **OU no repo ou via exports** | 🔴 | Assumir exports (D2): OU consome artefatos exportados de `/40`, não opera o vault. Convidar Felipe no primeiro contato |
 | A9 | **Validação da Leigh-Anne** | 🔴 | Vanessa+Felipe entregam uma **versão inicial BR** do arquivo; a Leigh-Anne valida depois. Até lá, A6–A8 estão fechados só no nível BR+Felipe |
 | A10 | **Ângulo de TNE sem a microcredencial (núcleo dos 35%)** | 🔴 | Com a microcredencial fora (A6), a seção B (núcleo de TNE e reconhecimento, ~35%) perde sua âncora original. **Redefinir** qual é o núcleo de TNE que sustenta o critério Quality & Relevance: o pivô vai para "parceria + mapeamento + roadmap de TNE futura", mais brando. Avaliar se o edital (TNE **Exploratory**) ainda fica bem servido. Discussão para o time |
+| A11 | **Mecanismo de gênero pós-pivô (GATE)** | 🔴 | O statement de gênero/EDI ancorava no **piloto com professoras**, que saiu (A6). Gênero é **gate de elegibilidade** — redefinir o mecanismo concreto nas novas atividades: lente de gênero no mapeamento dos campi (Atividade 2), metas de participação feminina em workshops/CoP/visita (Atividade 3), liderança feminina (Vanessa + Leigh-Anne). Refazer `06-gender-edi/` com dados |
+| A12 | **Activity Type + agrupamento da Atividade 3** | 🔴 | O formulário pede **um** `Key Activity Type` (dropdown fixo) por atividade. A Atividade 3 da Vanessa agrupa visita + workshops + CoP (3 naturezas). Decidir: manter agrupada (sugestão: Exchanges/Visits/Delegations) ou desagrupar (estoura o limite de 5, a menos que A1/A2 se fundam). Definir também os types de A1 e A2 evitando o frame "Research" (gate). Sugestões em `04-activities-monitoring/` |
 
 ## Resolvidos
 

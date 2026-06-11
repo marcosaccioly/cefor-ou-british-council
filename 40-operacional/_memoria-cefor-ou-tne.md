@@ -17,9 +17,11 @@ Cronológica reversa. Primeiro doc a abrir ao retomar. Cada entrada referencia a
 
 ### Pendências que saem desta sessão
 
-- **Destrinchar as 5 atividades da Vanessa nos campos do formulário** (`41-bid/04-activities-monitoring/` e `00-application-form.md` §C) — pedido explícito da Vanessa ("destrinchar pra preencher os campos").
-- Reescrever objetivos (§A3) e marcar como superados os rascunhos do Elton na direção da microcredencial (`activities-and-mande.md`, `recommended-direction.md`, B3).
-- Resolver A10 (núcleo de TNE pós-pivô) com o time.
+- ~~Destrinchar as 5 atividades~~ ✅ feito (`activities-and-mande.md` v2, campos do formulário real, drafts EN ≤50 palavras, `TBD` para o time).
+- **Descoberta na re-análise:** `_versao-ou/…OU2.md` é **o formulário vivo** (Good Grants), não anexo: Purpose e objetivos novos já preenchidos; atividades ainda são as 5 do Felipe (a substituir pelas da Vanessa); campos reais por atividade = Type (dropdown fixo) + Description/Output/Indicator de ≤50 palavras.
+- Divergência: objetivo 1 no OU2 está mais curto que no email da Vanessa (canônico = email). Atualizar no formulário.
+- Drafts superados sinalizados com banner: `concept-note`, `gender-edi` (→A11, GATE), `sustainability-pathway`, `risks`.
+- Resolver com o time: A10 (núcleo de TNE), **A11 (mecanismo de gênero pós-pivô — GATE)**, A12 (Activity Type/agrupamento da Atividade 3).
 
 ---
 

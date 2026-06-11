@@ -1,6 +1,6 @@
 # 05 — Riscos e mitigação
 
-> STATUS: rascunho v0
+> ⚠️ STATUS: **A REVISAR após o pivô (A6).** Riscos 1, 2 e 5 referenciam barrier map/framework regulatório/piloto — direção antiga. Riscos 3 (assimetria de parceria) e 4 (repasse) continuam válidos. Repensar riscos para as novas atividades (ex.: baixa adesão dos campi no mapeamento; agenda da visita à OU; continuidade da CoP).
 > ÚLTIMA EDIÇÃO: 2026-06-11 por Claude
 > **1 a 5 riscos** no formulário, cada um com probabilidade, impacto e mitigação. (Estes são riscos *do projeto*; os riscos *da candidatura* estão em `../context/intelligence/blind-spots.md`.)
 

@@ -1,6 +1,6 @@
 # 03 — Gender Equality & EDI Statement
 
-> STATUS: rascunho v0 — **GATE DE ELEGIBILIDADE** (pode reprovar a candidatura)
+> ⚠️ STATUS: **A REFAZER após o pivô — item A11 do catálogo.** Este draft ancorava gênero no **piloto com professoras**, que SAIU da proposta (A6). O gate de elegibilidade continua: é preciso redefinir o mecanismo concreto de gênero nas novas 5 atividades (ex.: lente de gênero no mapeamento dos campi; participação feminina em workshops/CoP/visita com metas; liderança feminina — Vanessa e Leigh-Anne como Lead Applicants). **GATE: pode reprovar a candidatura.**
 > ÚLTIMA EDIÇÃO: 2026-06-11 por Claude
 > Não pode ser genérico nem só restatement de política. Tem que mostrar **como** o projeto reduz desigualdade de gênero, com **dados** e **medidas**. Foco em **mulheres e meninas**. Estrutura exigida: Analysis · Measures · Impact · Risks · Outcomes.
 

@@ -1,6 +1,6 @@
 # 01 — Concept Note
 
-> STATUS: rascunho v0 (semente — refinar com a equipe)
+> ⚠️ STATUS: **SUPERADO pelo pivô (A6)** — todo este draft (título RIOT, framework de reconhecimento, piloto com professoras) é da direção antiga. O **Purpose canônico novo já existe** no formulário OU2 (`../_versao-ou/…OU2.md`, campo "Project Purpose"). Reescrever a partir dele + objetivos do email da Vanessa. Mantido como referência.
 > ÚLTIMA EDIÇÃO: 2026-06-11 por Claude
 > Documento que alinha o time e alimenta a candidatura. Versão final em **inglês**; resumo PT-BR ao fim.
 

@@ -1,6 +1,6 @@
 # 06 — Resultados, benefícios e sustentabilidade
 
-> STATUS: rascunho v0
+> ⚠️ STATUS: **A REVISAR após o pivô (A6).** Resultados 1–3 (framework de reconhecimento, microcredencial pilotada, barrier map) são da direção antiga. Os outputs novos já preenchidos no formulário OU2 (framework+roadmap, mapa dos campi, CoP, workshops) são a base correta — alinhar este doc a eles. MoU/CONIF/CONCEFOR continuam válidos como pathway.
 > ÚLTIMA EDIÇÃO: 2026-06-11 por Claude
 > Cobre os blocos D do formulário. **Sustainability vale 25%** — exige post-grant pathway nomeado, escala e disseminação. Ver `../context/grant/assessment-criteria.md`.
 

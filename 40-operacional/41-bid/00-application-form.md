@@ -15,7 +15,7 @@ Esqueleto de **todos os campos** do Sample Application Form, com limites de pala
 > ⚠️ _Draft SUPERADO_ (era "micro-credential credit-recognition framework"). Com o pivô (A6, microcredencial fora), o título precisa refletir **parceria + mapeamento + roadmap de EaD/TNE**. A refazer com o time — ver `01-concept-note.md`.
 
 **A2. Purpose / summary** *(≤ 75 palavras)*
-> ⚠️ _Draft a revisar_ — alinhar com a nova direção (Vanessa). Ver `01-concept-note.md` §Purpose.
+> ✅ _Purpose novo já preenchido no formulário OU2_ (`_versao-ou/…OU2.md`, campo "Project Purpose"): explorar como a expertise regional dos campi do Ifes pode ser expandida via EaD inclusiva, com roadmap para TNE futura. Usar como base; o draft antigo do `01-concept-note.md` está superado.
 
 **A3. Objectives** *(1 a 5; ≤ 120 palavras — confirmar se é total ou por objetivo)* — **direção Vanessa (canônica)**
 > 1. **Exchange expertise** between The Open University/IET and Ifes/CEFOR on topics such as distance-learning design, quality assurance, learner support, accessibility, digital education practices, AI in education, micro-credentials, learning analytics, and personalized and adaptive learning.
