@@ -4,6 +4,25 @@ Cronológica reversa. Primeiro doc a abrir ao retomar. Cada entrada referencia a
 
 ---
 
+## 2026-06-11 · fase `bid` · PIVÔ DE DIREÇÃO (canônico: Vanessa)
+
+**Mudança de escopo importante.** Áudios da Vanessa (para Marquito e Elton) + email Vanessa→Felipe (cópia Marquito), processados da inbox. A direção do projeto **mudou** em relação ao material do Elton/`/30a`:
+
+- **Reunião Vanessa + Felipe + Leigh-Anne** (véspera do feriado) reorientou a proposta. A Leigh-Anne puxa forte para **sustentabilidade / clima / EDI**; o edital reforça gênero e ambiental. A Vanessa reancorou tudo no **foco em EaD** (CEFOR e IET): grupos vulneráveis (aldeias indígenas, economia do mar/Piúma, educação ambiental/CIMAT) entram como **futuros usuários/públicos** mapeados, não como objeto direto.
+- **A microcredencial SAIU** (A6). A nova versão (Felipe + IA) trocou o "blueprint de microcredencial" por **mapeamento institucional/temático dos campi do IFES**. → Isso **supera** a tese do Elton (`recommended-direction.md` "Caminho 1: microcredencial inclusiva com reconhecimento BR-UK") e os rascunhos de `41-bid` ancorados nela.
+- **Objetivos 5 → 4** (A7); **atividades 7 → 5** (A8). Listas finais no email arquivado.
+- **Felipe deu ok** às alterações da Vanessa. **Direção canônica = Vanessa** (decisão do time, registrada por Marquito). Falta a validação final da Leigh-Anne (A9).
+
+**Alerta estratégico (A10):** sem a microcredencial, a seção B (núcleo de TNE e reconhecimento, ~35%) perde a âncora. Redefinir o núcleo de TNE que sustenta Quality & Relevance.
+
+### Pendências que saem desta sessão
+
+- **Destrinchar as 5 atividades da Vanessa nos campos do formulário** (`41-bid/04-activities-monitoring/` e `00-application-form.md` §C) — pedido explícito da Vanessa ("destrinchar pra preencher os campos").
+- Reescrever objetivos (§A3) e marcar como superados os rascunhos do Elton na direção da microcredencial (`activities-and-mande.md`, `recommended-direction.md`, B3).
+- Resolver A10 (núcleo de TNE pós-pivô) com o time.
+
+---
+
 ## 2026-06-11 · fase `bid` · integração do material do Elton
 
 - Merge do repo do Elton (`vertumno/cefor-ou-british-council`, upstream) no fork. Ele mantinha uma versão paralela do projeto (mesma filosofia atômica, organizada por função: `context/` + `application/`).

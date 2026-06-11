@@ -15,10 +15,16 @@ Legenda: 🔴 aberto · 🟡 em andamento · 🟢 resolvido
 | A3 | **Hospedagem do repo** | 🟡 | Sugestão: org do CEFOR/IFES, com Vanessa, Elton, Marquito + Felipe como colaboradores. Repo já existe (`cefor-ou-british-council`); confirmar org/colaboradores |
 | A4 | **Pesos da avaliação 2026** | 🟡 | Edição anterior: Q&R 35% · M&D 30% · Sust 25% · VfM 10%. Reconferir na **Guidance v2 2026** já em `10.1-documentos/`; ajustar ênfase do MOC se mudou |
 | A5 | **OU no repo ou via exports** | 🔴 | Assumir exports (D2): OU consome artefatos exportados de `/40`, não opera o vault. Convidar Felipe no primeiro contato |
+| A9 | **Validação da Leigh-Anne** | 🔴 | Vanessa+Felipe entregam uma **versão inicial BR** do arquivo; a Leigh-Anne valida depois. Até lá, A6–A8 estão fechados só no nível BR+Felipe |
+| A10 | **Ângulo de TNE sem a microcredencial (núcleo dos 35%)** | 🔴 | Com a microcredencial fora (A6), a seção B (núcleo de TNE e reconhecimento, ~35%) perde sua âncora original. **Redefinir** qual é o núcleo de TNE que sustenta o critério Quality & Relevance: o pivô vai para "parceria + mapeamento + roadmap de TNE futura", mais brando. Avaliar se o edital (TNE **Exploratory**) ainda fica bem servido. Discussão para o time |
 
 ## Resolvidos
 
-_(nenhum ainda)_
+| ID | Item | Resolução | Data |
+|---|---|---|---|
+| A6 | **Blueprint de microcredencial** | **Removido da proposta.** A nova versão (Felipe + IA, pós-reunião com a Leigh-Anne) trocou a microcredencial por mapeamento institucional/temático dos campi do IFES. Felipe deu ok à direção. Sujeito a A9 (validação Leigh) | 2026-06-11 |
+| A7 | **Objetivos: 5 → 4** | Removido o objetivo "Develop recommendations for expanding access to locally relevant knowledge…" (redundante com obj 2 e 5, na leitura da Vanessa). Os 4 finais no email da Vanessa→Felipe (11/jun, arquivado em `10.1/registros/`). Felipe deu ok | 2026-06-11 |
+| A8 | **Atividades: 7 → 5** | Template permite no máx. 5; a versão do Felipe tinha 7 e deixava objetivos sem cobertura. Vanessa (com IA) consolidou em 5, mapeadas aos 4 objetivos: (1) Diagnóstico de capacidades em EaD→obj1; (2) Mapeamento temático dos campi→obj2; (3) Trocas de experiências/workshops/visita OU/CoP→obj3; (4) Co-design framework+roadmap→obj4; (5) Disseminação. Felipe deu ok | 2026-06-11 |
 
 ---
 
