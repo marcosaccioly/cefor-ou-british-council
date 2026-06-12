@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kit de rascunhos — formulário TNE (OU3) · 12/jun</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --muted:#5c6470; --line:#e3e6ea; --bg:#f6f7f9;
+    --card:#fff; --accent:#1f6feb; --good:#1a7f37; --warn:#9a6700; --bad:#cf222e;
+    --soft:#eef4ff;
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink); background:var(--bg); margin:0; line-height:1.55;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:28px 18px 80px}
+  header.top{margin-bottom:8px}
+  h1{font-size:1.5rem; margin:0 0 4px}
+  .sub{color:var(--muted); font-size:.92rem}
+  .note{
+    background:var(--soft); border:1px solid #d4e2ff; border-radius:10px;
+    padding:12px 14px; font-size:.9rem; color:#243; margin:16px 0 26px;
+  }
+  h2.block{
+    font-size:1.05rem; margin:34px 0 6px; padding-bottom:6px;
+    border-bottom:2px solid var(--ink);
+  }
+  h2.block .tag{font-size:.72rem; font-weight:600; color:#fff; background:var(--ink);
+    padding:2px 8px; border-radius:20px; vertical-align:middle; margin-left:8px}
+  .blockintro{color:var(--muted); font-size:.88rem; margin:0 0 14px}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:12px;
+    padding:16px 16px 14px; margin:14px 0; box-shadow:0 1px 2px rgba(0,0,0,.03);
+  }
+  .field{font-weight:700; font-size:.98rem}
+  .limit{font-weight:500; color:var(--muted); font-size:.82rem; margin-left:6px}
+  .orient{font-size:.88rem; color:#33404f; margin:6px 0 10px}
+  .orient b{color:var(--ink)}
+  .draft{
+    position:relative; background:#fbfcfe; border:1px solid #dde3ea;
+    border-left:3px solid var(--accent); border-radius:8px;
+    padding:12px 14px; font-size:.93rem; color:#16202b; white-space:pre-wrap;
+  }
+  .draft.pt{border-left-color:#8957e5}
+  .meta{display:flex; align-items:center; gap:10px; margin-top:8px; flex-wrap:wrap}
+  .wc{font-size:.78rem; font-weight:600; padding:2px 8px; border-radius:20px;
+    background:#eef0f3; color:#333}
+  .wc.ok{background:#e7f5ec; color:var(--good)}
+  .wc.over{background:#fde8ea; color:var(--bad)}
+  button.copy{
+    font:inherit; font-size:.78rem; font-weight:600; cursor:pointer;
+    border:1px solid var(--accent); color:var(--accent); background:#fff;
+    padding:4px 12px; border-radius:20px;
+  }
+  button.copy:hover{background:var(--accent); color:#fff}
+  button.copy.done{border-color:var(--good); color:var(--good)}
+  .pill{font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:6px}
+  .pill.must{background:#fde8ea; color:var(--bad)}
+  .pill.ready{background:#e7f5ec; color:var(--good)}
+  .pill.dec{background:#fff4e0; color:var(--warn)}
+  ul.tight{margin:6px 0 0; padding-left:20px; font-size:.88rem}
+  ul.tight li{margin:3px 0}
+  .foot{margin-top:30px; font-size:.86rem; color:#33404f; background:#fff;
+    border:1px solid var(--line); border-radius:12px; padding:16px}
+  code{background:#eef0f3; padding:1px 5px; border-radius:4px; font-size:.85em}
+  @media print{button.copy{display:none} body{background:#fff}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Kit de rascunhos — formulário TNE (versão OU3)</h1>
+  <div class="sub">Para a Vanessa · 12 de junho de 2026 · textos em inglês prontos para colar no Good Grants</div>
+</header>
+
+<div class="note">
+  <b>Como usar:</b> cada caixa azul é um texto em inglês <b>pronto para colar</b> no campo correspondente do formulário; a linha roxa acima dela explica o que é. O contador mostra o nº de palavras x o limite do campo (verde = ok, vermelho = passou). Use o botão <b>Copiar</b>.
+  <br><br>
+  São rascunhos — <b>leitura e ajuste seu antes de enviar</b>. Reflitam os dados e o desenho que vocês já definiram; troquem nomes/números onde fizer sentido. Organizei em três blocos: <b>A</b> = correções obrigatórias (regras do formulário), <b>B</b> = campos vazios já redigidos, <b>C</b> = o que depende de decisão do time.
+</div>
+
+<!-- ============ BLOCO A ============ -->
+<h2 class="block">Bloco A — Correções obrigatórias <span class="tag">fazer primeiro · ~30 min</span></h2>
+<p class="blockintro">Itens de <b>regra dura</b> do formulário: se ficarem como estão, penalizam ou invalidam.</p>
+
+<div class="card">
+  <div class="field">SDGs — Sustainable Development Goals <span class="pill must">limite: 5</span></div>
+  <div class="orient">Estão marcados <b>6</b> (4, 5, 10, 13, 14, 17). O formulário aceita <b>no máximo 5</b>. Precisa remover 1. Gênero (5) é gate de elegibilidade → mantém. Sugestão: <b>remover o SDG 14 (Life Below Water)</b>, que se apoia só no Mestrado de Piúma, e manter o 13 (Climate Action), mais amplo e alinhado ao edital. Se quiserem destacar a economia do mar para a Leigh-Anne, a alternativa é remover o 10. <b>Decisão de vocês.</b></div>
+</div>
+
+<div class="card">
+  <div class="field">Project Purpose <span class="limit">limite 75 palavras</span> <span class="pill must">hoje está com 91</span></div>
+  <div class="orient">Passou do limite e tem dois erros de digitação (<code>tThe</code> e <code>(Ifes)Ifes CEFOR</code>). Versão aparada abaixo:</div>
+  <div class="draft" data-limit="75">This project will explore how regionally specialised expertise within the Ifes multi-campus network can be expanded through high-quality, inclusive distance learning. Through a knowledge exchange partnership between the IET at The Open University and Cefor at the Federal Institute of Espírito Santo (Ifes), it will identify opportunities to widen access to locally relevant knowledge, strengthen institutional capacity, and develop a roadmap for future online and transnational education supporting sustainable regional development and learner inclusion.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+</div>
+
+<div class="card">
+  <div class="field">Project Objectives <span class="limit">limite 120 palavras</span> <span class="pill ready">já está ok (106)</span></div>
+  <div class="orient">Tamanho ok. Só apagar o <code>."</code> solto no fim do objetivo 4. Nada mais a fazer aqui.</div>
+</div>
+
+<div class="card">
+  <div class="field">Activity Type — Atividades 1 e 2 <span class="pill dec">decisão de 1 min</span></div>
+  <div class="orient">As duas estão como <b>“Research &amp; Knowledge Generation”</b>. Esse rótulo cutuca a regra do edital de que <b>não financiam pesquisa</b>. Sugestão: <b>Atividade 1 → Capacity Building/Professional Development</b>; <b>Atividade 2 → Innovation &amp; Idea Generation</b> (ou Network Formation). O resto do conteúdo da atividade não muda.</div>
+</div>
+
+<div class="card">
+  <div class="field">Risk Management — Seção 5 <span class="pill must">obrigatória · está vazia</span></div>
+  <div class="orient">O formulário exige <b>no mínimo 1 risco</b> (máx. 5). Três prontos abaixo — cada um com o <b>tipo</b> (dropdown), <b>probabilidade/impacto</b> sugeridos, e os dois textos (descrição + mitigação).</div>
+
+  <p class="orient" style="margin-top:14px"><b>Risco 1 — Tipo:</b> Partnership / Collaboration · <b>Probabilidade:</b> Low (Unlikely) · <b>Impacto:</b> Moderate</p>
+  <div class="orient" style="margin:0 0 4px">Descrição (150 palavras máx.):</div>
+  <div class="draft" data-limit="150">North–South international partnerships can reproduce asymmetries, with the UK partner's agenda or resources dominating decisions, expectations diverging, or workload falling unevenly. If unmanaged, this could weaken ownership on the Ifes side and undermine the equitable partnership on which the project is built.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+  <div class="orient" style="margin:10px 0 4px">Mitigação (150 palavras máx.):</div>
+  <div class="draft" data-limit="150">The project is designed as a genuine co-design: roles, responsibilities, leadership of activities and authorship of outputs are shared from the outset. A joint Steering Committee co-chaired by both institutions takes strategic decisions by consensus, meeting fortnightly with a shared decision log, and each institution leads the activities aligned to its strengths. The partner lead (Vanessa Battestin, Ifes/Cefor) monitors balance and escalates any imbalance to the Committee.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+
+  <p class="orient" style="margin-top:18px"><b>Risco 2 — Tipo:</b> Operational / Delivery · <b>Probabilidade:</b> Medium (Possible) · <b>Impacto:</b> Minor</p>
+  <div class="orient" style="margin:0 0 4px">Descrição:</div>
+  <div class="draft" data-limit="150">Delays may arise from the availability of staff across multiple Ifes campuses, competing institutional commitments, or the scheduling of the campus consultation and the OU visit within the project timeline, potentially slowing the diagnostic, mapping or co-design activities.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+  <div class="orient" style="margin:10px 0 4px">Mitigação:</div>
+  <div class="draft" data-limit="150">The work plan includes time buffers and sequences activities so that a delay in one does not block the others. A focal point at each participating campus coordinates local input, and fortnightly co-coordination meetings track progress against milestones. The OU visit and workshops are scheduled early and confirmed well in advance. The co-coordinators (one per institution) are responsible for monitoring delivery.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+
+  <p class="orient" style="margin-top:18px"><b>Risco 3 — Tipo:</b> Health &amp; Safety · <b>Probabilidade:</b> Low (Unlikely) · <b>Impacto:</b> Moderate</p>
+  <div class="orient" style="margin:0 0 4px">Descrição:</div>
+  <div class="draft" data-limit="150">The project includes one international visit by Ifes/Cefor representatives to The Open University. Visa delays, travel disruption, illness or other health-and-safety issues during travel could prevent or postpone the visit, affecting relationship-building and the co-design of the framework and roadmap.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+  <div class="orient" style="margin:10px 0 4px">Mitigação:</div>
+  <div class="draft" data-limit="150">Travel will be planned well in advance to allow time for visas and arrangements, following the travel and health-and-safety policies of both institutions, including appropriate travel and health insurance. Should travel be prevented, the core objectives of the visit can be partly met through intensive online sessions. The Ifes/Cefor lead is responsible for monitoring and coordinating travel readiness.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+</div>
+
+<!-- ============ BLOCO B ============ -->
+<h2 class="block">Bloco B — Campos vazios, já redigidos <span class="tag">pontuam · não dependem de ninguém</span></h2>
+<p class="blockintro">Textos prontos para os campos que estavam em branco. Revisar e colar.</p>
+
+<div class="card">
+  <div class="field">Joint governance arrangements <span class="limit">Seção 1</span> <span class="pill ready">pontua em Quality 35%</span></div>
+  <div class="orient">Campo vazio. Pede como a decisão estratégica e operacional é compartilhada entre OU e Ifes.</div>
+  <div class="draft" data-limit="160">The project will be governed by a joint Steering Committee co-chaired by the Open University/IET and Ifes/Cefor leads, meeting online fortnightly to oversee progress, budget and risk. Strategic decisions — scope, dissemination, and the framework and roadmap — are taken jointly by both leads by consensus. Day-to-day operational decisions are delegated to two co-coordinators, one per institution, supported by a focal point at each participating Ifes campus. All key outputs are jointly reviewed and signed off by both institutions. A shared workspace and a simple decision log keep communication transparent, and any disagreement is escalated to the Steering Committee. This structure ensures balanced accountability and shared leadership across the UK and overseas partners throughout the project.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+</div>
+
+<div class="card">
+  <div class="field">Continuation / embedding <span class="limit">limite 150 palavras</span></div>
+  <div class="orient">Campo vazio. O que continua, é incorporado ou leva a mais colaboração depois do projeto.</div>
+  <div class="draft" data-limit="150">This is a standalone project, but it is intentionally designed to continue beyond the funding period. The Community of Practice established between IET and Cefor will be maintained by participants as an ongoing space for exchange on inclusive distance learning. The joint framework and strategic roadmap will name concrete next steps and target calls — including British Council, Erasmus+ and Horizon Europe — providing a clear pathway for follow-up funding. Both institutions intend to formalise the relationship through a Memorandum of Understanding, embedding the collaboration into their internal strategies. The mapping report and gender-disaggregated data will remain reusable institutional assets at Ifes/Cefor. Insights will be embedded in both teams through internal knowledge-sharing sessions, ensuring that the capacity built during the project is retained and shared more widely across the Ifes multi-campus network and the OU's internationalisation work.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+</div>
+
+<div class="card">
+  <div class="field">Expected Outcomes 2 a 5 <span class="limit">até 5 · 200 palavras cada</span></div>
+  <div class="orient">Só o Outcome 1 (framework + roadmap) está preenchido. M&amp;D (30%) valoriza um <b>mix de hard e soft</b>. Quatro sugestões abaixo — copiar cada uma no seu campo.</div>
+
+  <div class="orient" style="margin:10px 0 4px"><b>Outcome 2</b> (capacidade — hard):</div>
+  <div class="draft" data-limit="200">Ifes/Cefor strengthens its institutional capacity in distance learning — including instructional design, quality assurance, learner support, accessibility and AI in education — through structured knowledge exchange with the OU/IET, evidenced by staff participation and by the diagnostic and mapping reports informing future provision.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+
+  <div class="orient" style="margin:10px 0 4px"><b>Outcome 3</b> (relacionamento — soft):</div>
+  <div class="draft" data-limit="200">A sustained Community of Practice connects OU/IET and Ifes/Cefor staff working in digital and distance education, enabling continued collaboration, mutual learning and informal exchange that lasts beyond the funded period.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+
+  <div class="orient" style="margin:10px 0 4px"><b>Outcome 4</b> (dado/gênero — hard):</div>
+  <div class="draft" data-limit="200">Gender-disaggregated mapping data on regionally specialised provision across selected Ifes campuses is produced, giving both institutions an evidence base to prioritise where distance learning can most widen access for women and under-represented groups.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+
+  <div class="orient" style="margin:10px 0 4px"><b>Outcome 5</b> (parceria — soft):</div>
+  <div class="draft" data-limit="200">An equitable, trust-based partnership between the OU and Ifes is established, providing the foundation for future joint research, curriculum co-creation and transnational education initiatives, and positioning both institutions for further international collaboration.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+</div>
+
+<div class="card">
+  <div class="field">Seção 6 — Communication and Engagement <span class="pill ready">seção inteira vazia</span></div>
+  <div class="orient">Cinco subcampos. Há sobreposição com a Atividade 5 (disseminação), mas é seção própria e pontua. Textos por subcampo:</div>
+
+  <div class="orient" style="margin:12px 0 4px"><b>Why</b> <span class="limit">200 palavras máx.</span></div>
+  <div class="draft" data-limit="200">We want to make the partnership's learning visible and useful beyond the two institutions. Our goals are: to share practical insights on how high-quality, inclusive distance learning can widen access to regionally specialised expertise; to raise the profile of the OU–Ifes collaboration and attract future partners and funders; to demonstrate to the British Council and the wider sector the value of equitable UK–Brazil transnational education; and to keep both institutional communities — and the participating Ifes campuses — informed and engaged, so the collaboration is owned internally and sustained after the project ends.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+
+  <div class="orient" style="margin:10px 0 4px"><b>What</b> <span class="limit">200 palavras máx.</span></div>
+  <div class="draft" data-limit="200">We will disseminate: the joint framework and strategic roadmap for future online and transnational education collaboration; the institutional mapping report, with gender-disaggregated data; the comparative capability diagnostic; knowledge-exchange workshop materials and recordings; lessons learned on inclusive distance learning and on building an equitable North–South partnership; and at least one jointly authored paper or conference presentation. All outputs will be open access.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+
+  <div class="orient" style="margin:10px 0 4px"><b>To whom</b> <span class="limit">200 palavras máx.</span></div>
+  <div class="draft" data-limit="200">Primary audiences: leadership and staff at OU/IET and Ifes/Cefor, and the participating Ifes campuses across Espírito Santo. Wider audiences: the British Council and the Going Global Partnerships community; the Brazilian Federal Network (Conif, 41 institutions); distance-learning and educational-technology researchers and practitioners in the UK and Brazil; and policy and institutional stakeholders interested in inclusive distance learning, gender equity and transnational education. Specific gender and inclusion insights will also be shared with the Ifes Nepgens network.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+
+  <div class="orient" style="margin:10px 0 4px"><b>How</b> <span class="limit">400 palavras máx.</span></div>
+  <div class="draft" data-limit="400">Dissemination will use channels appropriate to each audience. Internally, findings will be shared through reports to the leadership of both institutions and through knowledge-sharing sessions within IET and Cefor; the Community of Practice will act as a continuous channel for exchange between teams and campuses. Externally, we will publish the framework, roadmap and mapping report as open-access documents on both institutions' platforms and through a dedicated project web page. We will submit at least one jointly authored paper to a peer-reviewed journal and/or present at an international conference on distance education, educational technology or internationalisation. Shorter updates and results will be shared via the institutions' websites and social media channels, in English and Portuguese, to reach audiences in both countries. Gender and inclusion insights will be shared with the Nepgens network and incorporated into relevant institutional reporting. Where useful, we will offer a public-facing webinar to share findings with the wider Ifes network and interested partners.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+
+  <div class="orient" style="margin:10px 0 4px"><b>When</b> <span class="limit">200 palavras máx.</span></div>
+  <div class="draft" data-limit="200">Communication runs throughout the project and beyond. During delivery, we will share brief progress updates at key milestones — after the diagnostic, the campus mapping, the OU visit, and the publication of the framework and roadmap. Internal reporting to leadership follows the interim and final reporting points. Open-access outputs are published as they are completed, from mid-project onwards. The paper and/or conference presentation will be submitted towards the end of the project and after completion. The Community of Practice maintains ongoing, informal communication after the funded period ends.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+</div>
+
+<div class="card">
+  <div class="field">Co-authorship / shared IP <span class="limit">Seção 7</span> <span class="pill ready">pontua em paridade</span></div>
+  <div class="orient">Campo vazio. Como os outputs demonstram co-autoria e contribuição intelectual partilhada.</div>
+  <div class="draft" data-limit="200">All substantive project outputs — the joint framework, the strategic roadmap, the mapping and diagnostic reports, and any publications — will be co-developed and co-authored by OU/IET and Ifes/Cefor. Co-authorship will be evidenced through joint design, shared drafting, and a common review-and-approval step in which both institutional leads sign off before any output is finalised or published. Authorship and contribution will be explicitly credited on every output, which will be released under an open licence (e.g. Creative Commons) to reflect shared ownership and enable reuse. Decisions on outputs are taken jointly through the Steering Committee, ensuring balanced intellectual contribution across the partnership.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+</div>
+
+<div class="card">
+  <div class="field">Uso de IA — Seção 7 <span class="pill ready">responder “Yes”</span></div>
+  <div class="orient">O BC permite explicitamente o uso de IA para estruturar/editar texto; omitir é pior. Marcar <b>Yes</b> e descrever:</div>
+  <div class="draft" data-limit="120">AI tools were used to support drafting and editing — structuring text, improving clarity, and keeping within word counts. All content reflects the genuine plans, data and decisions of the partnership; it was reviewed and approved by the team, and no confidential or sensitive information was shared with AI tools.</div>
+  <div class="meta"><span class="wc"></span><button class="copy">Copiar</button></div>
+</div>
+
+<div class="card">
+  <div class="field">Marcações rápidas (cliques + 1 frase)</div>
+  <ul class="tight">
+    <li><b>IP protected?</b> → <b>Yes</b>. Detalhe: outputs co-owned pelas duas instituições, publicados em acesso aberto sob licença Creative Commons (ver texto de co-autoria acima).</li>
+    <li><b>New partnership?</b> → marcar a opção que corresponde (provavelmente “new partnership”, salvo se contarem o contato CBIE 2024).</li>
+    <li><b>Outcome 1 timeframe</b> → long-term (12+ meses após o fim).</li>
+    <li><b>Standalone vs phased</b> → standalone.</li>
+    <li>Como os <b>times sustentam contato</b> (Seção 1) → marcar “departments will set up comms” + “mobility encouraged”.</li>
+  </ul>
+</div>
+
+<!-- ============ BLOCO C ============ -->
+<h2 class="block">Bloco C — Depende de decisão do time <span class="tag">não fecha sozinha hoje</span></h2>
+
+<div class="card">
+  <div class="field">Seção 4 — Orçamento <span class="pill dec">travado no A1</span></div>
+  <div class="orient">Tudo em branco e depende da decisão <b>financiado x in-kind (A1)</b>: staff (cap 30% = £7,5k), expertise (20% = £5k), viagem (20% = £5k), e o campo “equitable budget &amp; leadership”. A viagem já tem base (2 pessoas, VIX–GRU–LHR, 2.242 kg CO₂). <b>Fechar o A1 com o Felipe destrava o orçamento inteiro.</b></div>
+</div>
+
+<div class="card">
+  <div class="field">Tabela “Expected number of people” por gênero/nação <span class="limit">Seção 1</span></div>
+  <div class="orient">Vazia. Precisa de estimativas aproximadas, desagregadas por gênero (UK e fora do UK). Alguém do time chuta os números de participantes.</div>
+</div>
+
+<div class="foot">
+  <b>Documentos com prazo (começar a acionar, não escrever):</b>
+  <ul class="tight">
+    <li><b>Carta de apoio do Ifes:</b> papel timbrado, assinatura com <b>delegação</b> (reitoria/pró-reitoria, não a Vanessa), contendo nome do projeto, leads, instituições parceiras, compromissos (inclusive in-kind) e <b>aceite do grant agreement sem negociação</b>. Maior lead time — acionar a pró-reitoria esta semana.</li>
+    <li><b>CV da Vanessa</b> (lead do parceiro): <b>máximo 2 páginas</b>, sem fotos/logos, fonte padrão (Arial/Calibri 11–12).</li>
+  </ul>
+</div>
+
+</div>
+
+<script>
+  // Contador de palavras por rascunho
+  document.querySelectorAll('.draft').forEach(function(box){
+    var limit = parseInt(box.getAttribute('data-limit') || '0', 10);
+    var words = (box.textContent.trim().match(/\S+/g) || []).length;
+    var wc = box.parentElement.querySelector('.meta .wc') ||
+             (box.nextElementSibling && box.nextElementSibling.querySelector('.wc'));
+    if(!wc) return;
+    wc.textContent = words + (limit ? ' / ' + limit + ' palavras' : ' palavras');
+    if(limit){ wc.classList.add(words <= limit ? 'ok' : 'over'); }
+  });
+  // Botão copiar
+  document.querySelectorAll('button.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var meta = btn.closest('.meta');
+      var box = meta.previousElementSibling;
+      while(box && !box.classList.contains('draft')) box = box.previousElementSibling;
+      if(!box) return;
+      var text = box.textContent.trim();
+      navigator.clipboard.writeText(text).then(function(){
+        var old = btn.textContent;
+        btn.textContent = 'Copiado ✓'; btn.classList.add('done');
+        setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1600);
+      });
+    });
+  });
+</script>
+</body>
+</html>
